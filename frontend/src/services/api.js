@@ -37,25 +37,7 @@ function withApiPrefix(path) {
   return `${API_PREFIX}${path}`;
 }
 
-function buildFallbackUrls(url) {
-  if (!url || typeof url !== "string") return [];
-
-  if (url.startsWith("/api/api/")) {
-    return [url.replace(/^\/api\/api\//, "/api/"), url.replace(/^\/api\/api\//, "/")];
-  }
-
-  if (url.startsWith("/api/")) {
-    return [url.replace(/^\/api\//, "/api/api/"), url.replace(/^\/api\//, "/")];
-  }
-
-  if (url.startsWith("/")) {
-    return [`/api${url}`, `/api/api${url}`];
-  }
-
-  return [];
-}
-
-// Add response interceptor for error handling and route fallback.
+// Add response interceptor for error handling
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
