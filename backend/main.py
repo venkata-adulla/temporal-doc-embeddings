@@ -31,18 +31,19 @@ app.add_middleware(
 )
 
 ROUTES = [
-    ("chatbot", "/api/chatbot", ["chatbot"]),
-    ("dashboard", "/api/dashboard", ["dashboard"]),
-    ("documents", "/api/documents", ["documents"]),
-    ("lifecycles", "/api/lifecycles", ["lifecycles"]),
-    ("outcomes", "/api/outcomes", ["outcomes"]),
-    ("predictions", "/api/predictions", ["predictions"]),
+    ("chatbot", "/chatbot", ["chatbot"]),
+    ("dashboard", "/dashboard", ["dashboard"]),
+    ("documents", "/documents", ["documents"]),
+    ("lifecycles", "/lifecycles", ["lifecycles"]),
+    ("outcomes", "/outcomes", ["outcomes"]),
+    ("predictions", "/predictions", ["predictions"]),
 ]
 
-for module_name, prefix, tags in ROUTES:
+for module_name, base_prefix, tags in ROUTES:
     try:
         module = import_module(f"api.routes.{module_name}")
-        app.include_router(module.router, prefix=prefix, tags=tags)
+        app.include_router(module.router, prefix=base_prefix, tags=tags)
+        app.include_router(module.router, prefix=f"/api{base_prefix}", tags=tags)
     except Exception as exc:
         logging.getLogger(__name__).warning(
             "Skipping route module '%s' due to import error: %s", module_name, exc
