@@ -1,15 +1,23 @@
 import axios from "axios";
 
 const DEFAULT_DEV_API_BASE_URL = "http://localhost:8000";
+const API_PREFIX = "/api";
 
 function normalizeBaseUrl(url) {
   return (url || "").replace(/\/+$/, "");
 }
 
+function stripTrailingApiSegment(url) {
+  return url.replace(/\/api$/i, "");
+}
+
 function resolveApiBaseUrl() {
   const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL;
   if (configuredBaseUrl) {
-    return normalizeBaseUrl(configuredBaseUrl);
+    // API endpoints in this file are already prefixed with `/api/...`.
+    // If users configure `VITE_API_BASE_URL` as `https://host/api`,
+    // requests can become `/api/api/...` and fail with 404.
+    return stripTrailingApiSegment(normalizeBaseUrl(configuredBaseUrl));
   }
 
   // In production default to same-origin so deployments can use rewrites/proxies.
@@ -25,10 +33,49 @@ const api = axios.create({
   headers: defaultHeaders
 });
 
-// Add response interceptor for error handling
+function withApiPrefix(path) {
+  return `${API_PREFIX}${path}`;
+}
+
+// Add response interceptor for error handling and route fallback.
 api.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
+    const originalConfig = error.config || {};
+    const statusCode = error.response?.status;
+
+    if (statusCode === 404) {
+      const resolveFallbackCandidates = (url) => {
+        if (!url || typeof url !== "string") return [];
+
+        if (url.startsWith("/api/api/")) {
+          return [url.replace(/^\/api\/api\//, "/api/"), url.replace(/^\/api\/api\//, "/")];
+        }
+
+        if (url.startsWith("/api/")) {
+          return [url.replace(/^\/api\//, "/api/api/"), url.replace(/^\/api\//, "/")];
+        }
+
+        if (url.startsWith("/")) {
+          return [`/api${url}`, `/api/api${url}`];
+        }
+
+        return [];
+      };
+
+      const candidates =
+        originalConfig.__fallbackCandidates || resolveFallbackCandidates(originalConfig.url);
+
+      if (candidates.length > 0) {
+        const [nextUrl, ...rest] = candidates;
+        return api.request({
+          ...originalConfig,
+          url: nextUrl,
+          __fallbackCandidates: rest
+        });
+      }
+    }
+
     const message = error.response?.data?.detail || error.message || "An error occurred";
     console.error("API Error:", message);
     return Promise.reject(new Error(message));
@@ -38,7 +85,7 @@ api.interceptors.response.use(
 export async function uploadDocument(formData) {
   console.log("Sending upload request to /api/documents/upload");
   try {
-    const { data } = await api.post("/api/documents/upload", formData, {
+    const { data } = await api.post(withApiPrefix("/documents/upload"), formData, {
       headers: { 
         "Content-Type": "multipart/form-data",
         ...defaultHeaders
@@ -59,23 +106,23 @@ export async function uploadDocument(formData) {
 }
 
 export async function fetchLifecycle(lifecycleId) {
-  const { data } = await api.get(`/api/lifecycles/${lifecycleId}`);
+  const { data } = await api.get(withApiPrefix(`/lifecycles/${lifecycleId}`));
   return data;
 }
 
 export async function listLifecycles(search = null) {
   const params = search ? { search } : {};
-  const { data } = await api.get("/api/lifecycles", { params });
+  const { data } = await api.get(withApiPrefix("/lifecycles"), { params });
   return data;
 }
 
 export async function fetchLifecycleGraph(lifecycleId) {
-  const { data } = await api.get(`/api/lifecycles/${lifecycleId}/graph`);
+  const { data } = await api.get(withApiPrefix(`/lifecycles/${lifecycleId}/graph`));
   return data;
 }
 
 export async function fetchPrediction(lifecycleId) {
-  const { data } = await api.get(`/api/predictions/${lifecycleId}/risk`);
+  const { data } = await api.get(withApiPrefix(`/predictions/${lifecycleId}/risk`));
   return data;
 }
 
@@ -83,7 +130,7 @@ export async function listDocuments(lifecycleId = null, search = null) {
   const params = {};
   if (lifecycleId) params.lifecycle_id = lifecycleId;
   if (search) params.search = search;
-  const { data } = await api.get("/api/documents", { params });
+  const { data } = await api.get(withApiPrefix("/documents"), { params });
   return data;
 }
 
@@ -91,27 +138,27 @@ export async function listOutcomes(lifecycleId = null, outcomeType = null) {
   const params = {};
   if (lifecycleId) params.lifecycle_id = lifecycleId;
   if (outcomeType) params.outcome_type = outcomeType;
-  const { data } = await api.get("/api/outcomes", { params });
+  const { data } = await api.get(withApiPrefix("/outcomes"), { params });
   return data;
 }
 
 export async function createOutcome(payload) {
-  const { data } = await api.post("/api/outcomes", payload);
+  const { data } = await api.post(withApiPrefix("/outcomes"), payload);
   return data;
 }
 
 export async function fetchDashboardStats() {
-  const { data } = await api.get("/api/dashboard/stats");
+  const { data } = await api.get(withApiPrefix("/dashboard/stats"));
   return data;
 }
 
 export async function fetchNotifications() {
-  const { data } = await api.get("/api/dashboard/notifications");
+  const { data } = await api.get(withApiPrefix("/dashboard/notifications"));
   return data;
 }
 
 export async function fetchDocumentStats() {
-  const { data } = await api.get("/api/documents/stats");
+  const { data } = await api.get(withApiPrefix("/documents/stats"));
   return data;
 }
 
@@ -121,24 +168,24 @@ export async function fetchHealthStatus() {
 }
 
 export async function fetchLifecycleMetrics(lifecycleId) {
-  const { data } = await api.get(`/api/lifecycles/${lifecycleId}/metrics`);
+  const { data } = await api.get(withApiPrefix(`/lifecycles/${lifecycleId}/metrics`));
   return data;
 }
 
 export async function fetchDeltaAnalysis(lifecycleId) {
-  const { data } = await api.get(`/api/lifecycles/${lifecycleId}/delta-analysis`);
+  const { data } = await api.get(withApiPrefix(`/lifecycles/${lifecycleId}/delta-analysis`));
   return data;
 }
 
 export async function fetchTrends(lifecycleId) {
-  const { data } = await api.get(`/api/predictions/${lifecycleId}/trends`);
+  const { data } = await api.get(withApiPrefix(`/predictions/${lifecycleId}/trends`));
   return data;
 }
 
 export async function queryChatbot(question, sessionId = null) {
   const payload = { question };
   if (sessionId) payload.session_id = sessionId;
-  const { data } = await api.post("/api/chatbot/query", payload);
+  const { data } = await api.post(withApiPrefix("/chatbot/query"), payload);
   return data;
 }
 
@@ -150,7 +197,7 @@ function parseFilenameFromContentDisposition(contentDisposition) {
 
 export async function downloadLifecycleExport(lifecycleId, format) {
   try {
-    const response = await api.get(`/api/lifecycles/${lifecycleId}/export`, {
+    const response = await api.get(withApiPrefix(`/lifecycles/${lifecycleId}/export`), {
       params: { format },
       responseType: "blob"
     });
