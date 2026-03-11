@@ -32,6 +32,7 @@ class Settings(BaseSettings):
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5174",
     ]
+    allowed_origin_regex: str = r"https://.*\.vercel\.app"
 
     max_upload_size: int = 10 * 1024 * 1024
     upload_dir: str = "./uploads"
