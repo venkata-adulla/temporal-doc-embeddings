@@ -1,0 +1,17 @@
+LEAD INQUIRY
+
+Lead ID: LEAD-2024-00015
+Date: 2025-12-25
+Lifecycle ID: lifecycle_sales_015
+
+Company: Global Corp
+Contact Person: Contact Person Name
+Email: contact@globalcorp.com
+Phone: +1-555-955-6715
+
+Interest: Custom Development
+Budget Range: $291641
+Timeline: Q4 2024
+
+Source: Website
+Status: NEW

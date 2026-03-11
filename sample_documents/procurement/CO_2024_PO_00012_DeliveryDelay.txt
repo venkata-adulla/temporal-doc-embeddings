@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00012
+Date: 2025-12-09
+Lifecycle ID: lifecycle_procurement_012
+Related PO: PO-2024-00012
+
+Vendor: Global Supplies Inc
+Project: Project Echo
+
+Change Reason: Price Adjustment
+
+Original Amount: $34009.00
+Change Amount: $-3384.00
+New Total: $25356.00
+
+New Delivery Date: 2025-12-23
+
+Status: APPROVED

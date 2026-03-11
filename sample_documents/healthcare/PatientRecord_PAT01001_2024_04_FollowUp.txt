@@ -1,0 +1,19 @@
+PATIENT RECORD (FOLLOW-UP)
+
+Patient ID: PAT01001
+Date: 2024-04-15
+Lifecycle ID: lifecycle_healthcare_001
+
+Age: 45
+Gender: M
+Condition: Diabetes Type 2
+
+Vital Signs:
+- Blood Pressure: 130/80 [IMPROVED]
+- Heart Rate: 72 bpm [IMPROVED]
+- Temperature: 98.6°F
+- Blood Glucose: 145 mg/dL [IMPROVED from 180]
+
+Diagnosis: Type 2 Diabetes - Responding to treatment
+Treatment Plan: Continue current medication, monitor monthly
+Status: ACTIVE

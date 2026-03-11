@@ -1,0 +1,19 @@
+PATIENT RECORD
+
+Patient ID: PAT01011
+Date: 2025-10-22
+Lifecycle ID: lifecycle_healthcare_011
+
+Age: 32
+Gender: M
+Condition: Diabetes
+
+Vital Signs:
+- Blood Pressure: 139/79
+- Heart Rate: 87 bpm
+- Temperature: 97.9°F
+
+Diagnosis: Diabetes
+Treatment Plan: Medication and monitoring
+
+Status: ACTIVE

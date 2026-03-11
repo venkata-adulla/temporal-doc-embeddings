@@ -1,0 +1,30 @@
+RESUME
+
+Candidate: Jane Smith
+Date: 2026-01-25
+Lifecycle ID: lifecycle_hr_014
+Position Applied: DevOps Engineer
+
+PROFESSIONAL SUMMARY
+Experienced DevOps Engineer with 8 years of experience in software development and technology.
+
+WORK EXPERIENCE
+Senior DevOps Engineer | Tech Company Inc | 2020 - Present
+- Led development of multiple projects
+- Managed team of 7 engineers
+- Achieved 95% project success rate
+
+DevOps Engineer | Previous Company | 2018 - 2020
+- Developed and maintained software applications
+- Collaborated with cross-functional teams
+
+EDUCATION
+Bachelor of Science in Computer Science
+University Name | 2014 - 2018
+
+SKILLS
+- Programming Languages: Python, Java, JavaScript
+- Frameworks: React, Node.js, Django
+- Tools: Git, Docker, Kubernetes
+
+Status: ACTIVE

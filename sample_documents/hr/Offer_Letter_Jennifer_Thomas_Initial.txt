@@ -1,0 +1,22 @@
+OFFER LETTER
+
+Offer ID: OFF-2024-00011
+Date: 2026-01-18
+Lifecycle ID: lifecycle_hr_011
+
+Candidate: Jennifer Thomas
+Position: Software Engineer
+
+Dear Jennifer,
+
+We are pleased to offer you the position of Software Engineer at our company.
+
+Offer Details:
+- Start Date: 2026-02-15
+- Salary: $137016/year
+- Benefits: Health, Dental, Vision, 401(k)
+- Vacation: 21 days per year
+
+Please respond by 2026-01-25.
+
+Status: PENDING

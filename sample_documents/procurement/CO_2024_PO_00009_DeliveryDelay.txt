@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00009
+Date: 2026-03-07
+Lifecycle ID: lifecycle_procurement_009
+Related PO: PO-2024-00009
+
+Vendor: Global Supplies Inc
+Project: Project Alpha
+
+Change Reason: Delivery Delay
+
+Original Amount: $39365.00
+Change Amount: $-1767.00
+New Total: $48438.00
+
+New Delivery Date: 2026-03-18
+
+Status: APPROVED

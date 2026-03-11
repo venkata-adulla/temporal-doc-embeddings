@@ -1,0 +1,27 @@
+PROPOSAL
+
+Proposal ID: PROP-2024-00011
+Date: 2025-12-25
+Version: 2
+Lifecycle ID: lifecycle_sales_011
+
+Company: Innovation Labs
+Product: Enterprise Software
+
+Executive Summary:
+We propose to deliver Enterprise Software to Innovation Labs with the following scope and pricing.
+
+Scope of Work:
+1. Implementation and setup
+2. Training and support
+3. Maintenance and updates
+
+Pricing:
+- Base Package: $171130
+- Additional Services: $32973
+- Total: $171657
+
+Timeline: 31 days
+Payment Terms: 50% upfront, 50% on completion
+
+Status: REVISED

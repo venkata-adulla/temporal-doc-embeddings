@@ -1,0 +1,16 @@
+PRESCRIPTION
+
+Prescription ID: RX-2024-00007
+Date: 2025-09-26
+Lifecycle ID: lifecycle_healthcare_007
+Patient ID: PAT01007
+
+Medication: Medication Name 1mg
+Dosage: 2 tablet(s) daily
+Duration: 8 days
+Refills: 0
+
+Prescribing Physician: Dr. Smith
+Pharmacy: Local Pharmacy
+
+Status: ACTIVE

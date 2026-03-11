@@ -1,0 +1,17 @@
+LEAD INQUIRY
+
+Lead ID: LEAD-2024-00006
+Date: 2026-01-23
+Lifecycle ID: lifecycle_sales_006
+
+Company: Digital Services Co
+Contact Person: Contact Person Name
+Email: contact@digitalservicesco.com
+Phone: +1-555-999-5526
+
+Interest: Custom Development
+Budget Range: $411865
+Timeline: Q4 2024
+
+Source: Referral
+Status: NEW

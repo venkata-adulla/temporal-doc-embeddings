@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00015
+Date: 2026-01-03
+Lifecycle ID: lifecycle_procurement_015
+
+Vendor: Material Source Ltd
+Project: Project Beta
+
+Items:
+1. Component A - Quantity: 11 units - Unit Price: $79.00
+2. Component B - Quantity: 48 units - Unit Price: $664.00
+3. Service Package - Quantity: 1 - Unit Price: $4189.00
+
+Subtotal: $25386.00
+Tax: $2064.00
+Total: $39800.00
+
+Delivery Date: 2026-01-28
+Payment Terms: Net 30
+
+Status: PENDING

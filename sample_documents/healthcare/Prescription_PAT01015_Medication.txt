@@ -1,0 +1,16 @@
+PRESCRIPTION
+
+Prescription ID: RX-2024-00015
+Date: 2025-09-08
+Lifecycle ID: lifecycle_healthcare_015
+Patient ID: PAT01015
+
+Medication: Medication Name 2mg
+Dosage: 2 tablet(s) daily
+Duration: 10 days
+Refills: 0
+
+Prescribing Physician: Dr. Smith
+Pharmacy: Local Pharmacy
+
+Status: ACTIVE

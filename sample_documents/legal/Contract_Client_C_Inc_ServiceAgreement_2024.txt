@@ -1,0 +1,25 @@
+LEGAL CONTRACT
+
+Contract ID: LEG-2024-00012
+Date: 2025-11-19
+Lifecycle ID: lifecycle_legal_012
+
+Client: Client C Inc
+Matter Type: Litigation Support
+
+Parties:
+1. Client C Inc
+2. Counterparty Name
+
+Terms:
+- Effective Date: 2025-11-19
+- Expiration Date: 2027-11-13
+- Value: $860965
+
+Key Provisions:
+1. Scope of services
+2. Payment terms
+3. Confidentiality
+4. Termination clauses
+
+Status: DRAFT

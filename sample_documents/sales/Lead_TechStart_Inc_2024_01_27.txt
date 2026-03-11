@@ -1,0 +1,17 @@
+LEAD INQUIRY
+
+Lead ID: LEAD-2024-00008
+Date: 2026-01-27
+Lifecycle ID: lifecycle_sales_008
+
+Company: TechStart Inc
+Contact Person: Contact Person Name
+Email: contact@techstartinc.com
+Phone: +1-555-595-8306
+
+Interest: Cloud Platform
+Budget Range: $187452
+Timeline: Q1 2024
+
+Source: Referral
+Status: NEW

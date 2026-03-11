@@ -1,0 +1,17 @@
+LEAD INQUIRY
+
+Lead ID: LEAD-2024-00011
+Date: 2025-12-16
+Lifecycle ID: lifecycle_sales_011
+
+Company: Innovation Labs
+Contact Person: Contact Person Name
+Email: contact@innovationlabs.com
+Phone: +1-555-479-5097
+
+Interest: Enterprise Software
+Budget Range: $279510
+Timeline: Q3 2024
+
+Source: Website
+Status: NEW

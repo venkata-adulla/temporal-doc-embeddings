@@ -1,0 +1,22 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00004
+Date: 2026-01-20
+Lifecycle ID: lifecycle_hr_004
+
+Candidate: John Doe
+Position: DevOps Engineer
+Round: 1
+
+Interviewer: Hiring Manager
+Duration: 63 minutes
+
+Technical Skills: Strong
+Communication: Excellent
+Cultural Fit: High
+
+Overall Rating: 10/10
+
+Recommendation: Proceed to next round
+
+Status: COMPLETED

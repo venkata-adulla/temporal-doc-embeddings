@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00002
+Date: 2025-12-26
+Lifecycle ID: lifecycle_procurement_002
+Related PO: PO-2024-00002
+
+Vendor: Acme Corp
+Project: Project Delta
+
+Change Reason: Delivery Delay
+
+Original Amount: $49774.00
+Change Amount: $-2007.00
+New Total: $42706.00
+
+New Delivery Date: 2026-01-06
+
+Status: APPROVED

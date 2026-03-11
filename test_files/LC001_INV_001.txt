@@ -1,0 +1,20 @@
+Invoice #: INV-789
+Purchase Order: PO-12345
+Lifecycle ID: lifecycle_001
+Invoice Date: 2024-03-15
+Due Date: 2024-04-14
+
+Vendor: Acme Manufacturing Inc.
+Buyer: TechCorp Industries
+
+Items Billed:
+- Widget Model A+: 1000 units @ $65.00 = $65,000.00
+- Rush Delivery Fee: $10,000.00
+- Additional Services: $5,000.00
+
+Total Amount Due: $80,000.00
+
+Payment Terms: Net 30
+Status: Pending Payment
+
+NOTE: Final invoice exceeds original PO by $30,000 (60% overrun)

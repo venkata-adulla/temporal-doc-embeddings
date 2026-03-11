@@ -1,0 +1,22 @@
+OFFER LETTER
+
+Offer ID: OFF-2024-00007
+Date: 2026-02-19
+Lifecycle ID: lifecycle_hr_007
+
+Candidate: Emily Davis
+Position: Product Manager
+
+Dear Emily,
+
+We are pleased to offer you the position of Product Manager at our company.
+
+Offer Details:
+- Start Date: 2026-03-20
+- Salary: $123316/year
+- Benefits: Health, Dental, Vision, 401(k)
+- Vacation: 23 days per year
+
+Please respond by 2026-02-26.
+
+Status: ACCEPTED

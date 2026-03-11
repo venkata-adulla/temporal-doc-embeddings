@@ -1,0 +1,23 @@
+CONTRACT
+
+Contract ID: CNT-2024-00001
+Date: 2024-04-05
+Lifecycle ID: lifecycle_sales_001
+Related Proposal: PROP-2024-00001
+
+Company: TechCorp Global
+Contact: David Chen (CTO)
+
+Contract Terms:
+- Total Value: $340,000
+- Payment Schedule: 40% upfront ($136,000), 30% on implementation ($102,000), 30% on completion ($102,000)
+- Start Date: 2024-04-15
+- Completion Date: 2024-06-15
+- Support Period: 24 months from completion
+
+Terms and Conditions:
+- Standard service level agreement
+- Intellectual property rights
+- Confidentiality clause
+
+Status: SIGNED

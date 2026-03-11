@@ -1,0 +1,17 @@
+EXPENSE REPORT
+
+Report ID: EXP-2024-00010
+Date: 2026-01-06
+Lifecycle ID: lifecycle_finance_010
+Department: HR
+Employee: Employee 010
+
+Expenses:
+1. Travel: $1970.00
+2. Meals: $376.00
+3. Supplies: $130.00
+4. Other: $587.00
+
+Total: $3182.00
+
+Status: APPROVED

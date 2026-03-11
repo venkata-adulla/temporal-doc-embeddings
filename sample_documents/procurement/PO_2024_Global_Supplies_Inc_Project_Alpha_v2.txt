@@ -1,0 +1,23 @@
+PURCHASE ORDER (REVISED)
+
+PO Number: PO-2024-00001
+Date: 2024-01-25
+Lifecycle ID: lifecycle_procurement_001
+Revision: v2
+
+Vendor: Global Supplies Inc
+Project: Project Alpha
+
+Items:
+1. Component A - Quantity: 75 units - Unit Price: $500.00  [CHANGED: +25 units]
+2. Component B - Quantity: 25 units - Unit Price: $1,200.00 [CHANGED: +$200/unit]
+3. Service Package - Quantity: 1 - Unit Price: $5,000.00
+4. Rush Delivery Fee - Quantity: 1 - Unit Price: $3,000.00 [NEW ITEM]
+
+Subtotal: $68,750.00
+Tax: $3,437.50
+Total: $72,187.50
+
+Delivery Date: 2024-02-10 (15 days) [CHANGED: 15 days earlier]
+Payment Terms: Net 30
+Status: APPROVED

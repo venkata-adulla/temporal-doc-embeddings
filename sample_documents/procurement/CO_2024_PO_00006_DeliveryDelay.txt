@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00006
+Date: 2026-02-07
+Lifecycle ID: lifecycle_procurement_006
+Related PO: PO-2024-00006
+
+Vendor: Acme Corp
+Project: Project Alpha
+
+Change Reason: Delivery Delay
+
+Original Amount: $26415.00
+Change Amount: $-473.00
+New Total: $14576.00
+
+New Delivery Date: 2026-02-21
+
+Status: APPROVED

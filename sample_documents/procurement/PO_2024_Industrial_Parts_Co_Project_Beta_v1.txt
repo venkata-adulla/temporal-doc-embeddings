@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00011
+Date: 2026-02-09
+Lifecycle ID: lifecycle_procurement_011
+
+Vendor: Industrial Parts Co
+Project: Project Beta
+
+Items:
+1. Component A - Quantity: 14 units - Unit Price: $377.00
+2. Component B - Quantity: 10 units - Unit Price: $169.00
+3. Service Package - Quantity: 1 - Unit Price: $2971.00
+
+Subtotal: $39887.00
+Tax: $1769.00
+Total: $13685.00
+
+Delivery Date: 2026-03-02
+Payment Terms: Net 30
+
+Status: PENDING

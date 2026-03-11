@@ -1,0 +1,27 @@
+PROPOSAL
+
+Proposal ID: PROP-2024-00004
+Date: 2026-02-22
+Version: 1
+Lifecycle ID: lifecycle_sales_004
+
+Company: Global Corp
+Product: Enterprise Software
+
+Executive Summary:
+We propose to deliver Enterprise Software to Global Corp with the following scope and pricing.
+
+Scope of Work:
+1. Implementation and setup
+2. Training and support
+3. Maintenance and updates
+
+Pricing:
+- Base Package: $97227
+- Additional Services: $19526
+- Total: $90979
+
+Timeline: 67 days
+Payment Terms: 50% upfront, 50% on completion
+
+Status: SENT

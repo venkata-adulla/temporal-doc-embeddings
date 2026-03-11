@@ -1,0 +1,21 @@
+OFFER LETTER (REVISED)
+
+Offer ID: OFF-2024-00001
+Date: 2024-03-22
+Application ID: APP-2024-00001
+Lifecycle ID: lifecycle_hr_001
+Revision: v2
+
+Candidate: Sarah Johnson
+Position: Senior Software Engineer
+
+Offer Details:
+- Base Salary: $150,000/year [INCREASED: +$5k from initial offer]
+- Signing Bonus: $15,000 [INCREASED: +$5k]
+- Stock Options: 750 shares [INCREASED: +250 shares]
+- Start Date: 2024-04-15
+- Benefits: Health, Dental, Vision, 401k match
+- Remote Work: 3 days/week [NEW BENEFIT]
+
+Reason: Candidate negotiation
+Status: ACCEPTED

@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00012
+Date: 2025-12-27
+Lifecycle ID: lifecycle_procurement_012
+Related PO: PO-2024-00012
+
+Vendor: Global Supplies Inc
+Project: Project Echo
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 31 units - Unit Price: $158.00
+2. Component B - Quantity: 46 units - Unit Price: $847.00
+3. Service Package - Quantity: 1 - Unit Price: $3009.00
+
+Subtotal: $13394.00
+Tax: $2460.00
+Total: $40239.00
+
+Payment Due: 2026-01-26
+Status: PAID

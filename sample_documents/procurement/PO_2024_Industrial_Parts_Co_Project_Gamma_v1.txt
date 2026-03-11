@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00014
+Date: 2025-12-25
+Lifecycle ID: lifecycle_procurement_014
+
+Vendor: Industrial Parts Co
+Project: Project Gamma
+
+Items:
+1. Component A - Quantity: 27 units - Unit Price: $65.00
+2. Component B - Quantity: 42 units - Unit Price: $165.00
+3. Service Package - Quantity: 1 - Unit Price: $4232.00
+
+Subtotal: $18220.00
+Tax: $1964.00
+Total: $42508.00
+
+Delivery Date: 2026-01-12
+Payment Terms: Net 30
+
+Status: PENDING

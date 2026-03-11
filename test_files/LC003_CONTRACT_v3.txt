@@ -1,0 +1,24 @@
+Contract #: CNT-456
+Lifecycle ID: lifecycle_003
+Contract Date: 2024-01-10
+Revision: 3
+Revision Date: 2024-01-25
+Vendor: Service Provider Inc.
+Client: TechCorp Industries
+
+Service Agreement:
+- Service Type: IT Support Services
+- Duration: 18 months (EXTENDED)
+- Monthly Fee: $6,000.00
+- Total Contract Value: $108,000.00
+
+MODIFICATION #2: Extended contract duration from 12 to 18 months
+
+Terms:
+- Payment: Monthly in advance
+- Service Level: 24/7 support
+- Response Time: 1 hour
+
+Status: Approved
+Approved By: CEO
+Approval Date: 2024-01-25

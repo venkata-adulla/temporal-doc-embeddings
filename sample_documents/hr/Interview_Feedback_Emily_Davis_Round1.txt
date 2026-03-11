@@ -1,0 +1,22 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00007
+Date: 2026-02-11
+Lifecycle ID: lifecycle_hr_007
+
+Candidate: Emily Davis
+Position: Product Manager
+Round: 1
+
+Interviewer: Hiring Manager
+Duration: 86 minutes
+
+Technical Skills: Moderate
+Communication: Excellent
+Cultural Fit: High
+
+Overall Rating: 7/10
+
+Recommendation: Proceed to next round
+
+Status: COMPLETED

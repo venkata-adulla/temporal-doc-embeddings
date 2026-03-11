@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00004
+Date: 2026-01-23
+Lifecycle ID: lifecycle_procurement_004
+Related PO: PO-2024-00004
+
+Vendor: TechVendor Solutions
+Project: Project Echo
+
+Change Reason: Delivery Delay
+
+Original Amount: $13653.00
+Change Amount: $-1613.00
+New Total: $18507.00
+
+New Delivery Date: 2026-02-12
+
+Status: APPROVED

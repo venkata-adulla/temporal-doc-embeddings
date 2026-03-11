@@ -1,0 +1,18 @@
+APPLICATION FORM
+
+Application ID: APP-2024-00012
+Date: 2026-01-18
+Lifecycle ID: lifecycle_hr_012
+
+Candidate: Jennifer Thomas
+Position: UX Designer
+
+Personal Information:
+- Email: jennifer.thomas@email.com
+- Phone: +1-555-889-4731
+- Location: City, State
+
+Availability: Immediate
+Expected Salary: $111944/year
+
+Status: SUBMITTED

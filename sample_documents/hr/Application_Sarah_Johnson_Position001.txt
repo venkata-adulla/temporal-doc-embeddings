@@ -1,0 +1,20 @@
+APPLICATION FORM
+
+Application ID: APP-2024-00001
+Date: 2024-03-01
+Lifecycle ID: lifecycle_hr_001
+
+Candidate: Sarah Johnson
+Position: Senior Software Engineer
+
+Personal Information:
+- Email: sarah.johnson@email.com
+- Phone: +1-555-234-5678
+- Location: San Francisco, CA
+- Years of Experience: 8 years
+
+Skills: Python, React, AWS, Docker, Kubernetes
+Availability: 2 weeks notice
+Expected Salary: $140,000/year
+
+Status: SUBMITTED

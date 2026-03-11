@@ -1,0 +1,21 @@
+EXPENSE REPORT
+
+Expense Report ID: EXP-2024-00001
+Date: 2024-03-31
+Employee ID: EMP001
+Lifecycle ID: lifecycle_finance_001
+Period: Q1 2024
+
+Employee: Maria Rodriguez
+Department: Marketing
+
+Expenses:
+1. Business Travel - Conference Registration: $1,200.00
+2. Business Travel - Hotel (3 nights): $450.00
+3. Business Travel - Meals: $180.00
+4. Office Supplies: $125.00
+5. Software Subscription: $299.00
+
+Subtotal: $2,254.00
+Reimbursement: $2,254.00
+Status: SUBMITTED

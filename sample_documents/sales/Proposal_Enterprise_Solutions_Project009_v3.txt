@@ -1,0 +1,27 @@
+PROPOSAL
+
+Proposal ID: PROP-2024-00009
+Date: 2025-12-21
+Version: 3
+Lifecycle ID: lifecycle_sales_009
+
+Company: Enterprise Solutions
+Product: Enterprise Software
+
+Executive Summary:
+We propose to deliver Enterprise Software to Enterprise Solutions with the following scope and pricing.
+
+Scope of Work:
+1. Implementation and setup
+2. Training and support
+3. Maintenance and updates
+
+Pricing:
+- Base Package: $178201
+- Additional Services: $28759
+- Total: $114043
+
+Timeline: 76 days
+Payment Terms: 50% upfront, 50% on completion
+
+Status: REVISED

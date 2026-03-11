@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00014
+Date: 2026-02-03
+Lifecycle ID: lifecycle_procurement_014
+Related PO: PO-2024-00014
+
+Vendor: Industrial Parts Co
+Project: Project Gamma
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 24 units - Unit Price: $441.00
+2. Component B - Quantity: 22 units - Unit Price: $402.00
+3. Service Package - Quantity: 1 - Unit Price: $1939.00
+
+Subtotal: $36360.00
+Tax: $1242.00
+Total: $22133.00
+
+Payment Due: 2026-03-05
+Status: PENDING

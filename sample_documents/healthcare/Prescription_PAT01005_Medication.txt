@@ -1,0 +1,16 @@
+PRESCRIPTION
+
+Prescription ID: RX-2024-00005
+Date: 2025-11-24
+Lifecycle ID: lifecycle_healthcare_005
+Patient ID: PAT01005
+
+Medication: Medication Name 5mg
+Dosage: 1 tablet(s) daily
+Duration: 22 days
+Refills: 2
+
+Prescribing Physician: Dr. Smith
+Pharmacy: Local Pharmacy
+
+Status: ACTIVE

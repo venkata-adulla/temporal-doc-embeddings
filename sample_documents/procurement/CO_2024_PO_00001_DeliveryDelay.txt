@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00001
+Date: 2025-12-19
+Lifecycle ID: lifecycle_procurement_001
+Related PO: PO-2024-00001
+
+Vendor: TechVendor Solutions
+Project: Project Beta
+
+Change Reason: Price Adjustment
+
+Original Amount: $44439.00
+Change Amount: $1632.00
+New Total: $8652.00
+
+New Delivery Date: 2026-01-03
+
+Status: APPROVED

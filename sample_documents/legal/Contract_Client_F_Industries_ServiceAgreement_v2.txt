@@ -1,0 +1,25 @@
+CONTRACT (REVISED)
+
+Contract ID: CNT-LEGAL-2024-00001
+Date: 2024-03-10
+Version: 2
+Lifecycle ID: lifecycle_legal_001
+
+Client: F Industries Inc
+Service: Software Development Services
+
+Contract Terms:
+- Service Period: 18 months [EXTENDED: +6 months]
+- Monthly Fee: $28,000 [INCREASED: +$3k/month]
+- Total Contract Value: $504,000 [INCREASED: +$204k]
+- Payment Terms: Net 15 [CHANGED: Faster payment]
+- Termination Clause: 90 days notice [CHANGED: Longer notice]
+
+Key Provisions:
+- Intellectual Property: Client retains IP
+- Confidentiality: Mutual NDA
+- Liability: Limited to contract value
+- Performance Guarantees: 99.5% uptime SLA [NEW]
+- Penalty Clause: $5,000/month for SLA breach [NEW]
+
+Status: UNDER_REVIEW

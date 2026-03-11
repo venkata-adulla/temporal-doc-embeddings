@@ -1,0 +1,17 @@
+EXPENSE REPORT
+
+Report ID: EXP-2024-00007
+Date: 2026-01-31
+Lifecycle ID: lifecycle_finance_007
+Department: Sales
+Employee: Employee 007
+
+Expenses:
+1. Travel: $2127.00
+2. Meals: $450.00
+3. Supplies: $124.00
+4. Other: $545.00
+
+Total: $2116.00
+
+Status: APPROVED

@@ -1,0 +1,32 @@
+PROPOSAL (REVISED)
+
+Proposal ID: PROP-2024-00001
+Date: 2024-03-28
+Version: 2
+Lifecycle ID: lifecycle_sales_001
+
+Company: TechCorp Global
+Contact: David Chen (CTO)
+Product: Enterprise Software Platform
+
+Executive Summary:
+Revised proposal based on client feedback and requirements.
+
+Scope of Work:
+1. Software License: Enterprise Edition
+2. Implementation and setup: 30 days
+3. Training: 8 days onsite [INCREASED: +3 days]
+4. Support: 24 months premium support [INCREASED: +12 months]
+5. Custom Integration: API development [NEW]
+
+Pricing:
+- Software License: $180,000
+- Implementation: $50,000 [INCREASED: +$5k]
+- Training: $20,000 [INCREASED: +$5k]
+- Support: $55,000 [INCREASED: +$25k for 24 months]
+- Custom Integration: $35,000 [NEW]
+- Total: $340,000 [INCREASED: +$70k]
+
+Timeline: 60 days [EXTENDED: +15 days for integration]
+Payment Terms: 40% upfront, 30% on implementation, 30% on completion
+Status: REVISED

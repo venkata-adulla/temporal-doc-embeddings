@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00008
+Date: 2026-02-10
+Lifecycle ID: lifecycle_procurement_008
+
+Vendor: Industrial Parts Co
+Project: Project Echo
+
+Items:
+1. Component A - Quantity: 84 units - Unit Price: $349.00
+2. Component B - Quantity: 50 units - Unit Price: $165.00
+3. Service Package - Quantity: 1 - Unit Price: $4769.00
+
+Subtotal: $37607.00
+Tax: $1311.00
+Total: $27710.00
+
+Delivery Date: 2026-03-06
+Payment Terms: Net 30
+
+Status: PENDING

@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00001
+Date: 2025-12-07
+Lifecycle ID: lifecycle_procurement_001
+
+Vendor: TechVendor Solutions
+Project: Project Beta
+
+Items:
+1. Component A - Quantity: 65 units - Unit Price: $360.00
+2. Component B - Quantity: 12 units - Unit Price: $538.00
+3. Service Package - Quantity: 1 - Unit Price: $1516.00
+
+Subtotal: $27243.00
+Tax: $1279.00
+Total: $16336.00
+
+Delivery Date: 2025-12-26
+Payment Terms: Net 30
+
+Status: PENDING

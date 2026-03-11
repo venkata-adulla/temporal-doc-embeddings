@@ -1,0 +1,19 @@
+FINANCIAL STATEMENT
+
+Statement ID: FIN-2024-00008
+Date: 2026-01-05
+Lifecycle ID: lifecycle_finance_008
+Period: Q2 2024
+
+Revenue: $1,828,026
+Cost of Goods Sold: $1,968,608
+Gross Profit: $4,925,133
+
+Operating Expenses:
+- Salaries: $690,742
+- Marketing: $108,609
+- Operations: $834,554
+
+Net Income: $1,756,625
+
+Status: DRAFT

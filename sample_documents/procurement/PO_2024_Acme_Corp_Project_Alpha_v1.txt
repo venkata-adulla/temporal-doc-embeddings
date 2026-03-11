@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00006
+Date: 2026-01-28
+Lifecycle ID: lifecycle_procurement_006
+
+Vendor: Acme Corp
+Project: Project Alpha
+
+Items:
+1. Component A - Quantity: 54 units - Unit Price: $167.00
+2. Component B - Quantity: 9 units - Unit Price: $616.00
+3. Service Package - Quantity: 1 - Unit Price: $1250.00
+
+Subtotal: $35866.00
+Tax: $1143.00
+Total: $14645.00
+
+Delivery Date: 2026-02-13
+Payment Terms: Net 30
+
+Status: PENDING

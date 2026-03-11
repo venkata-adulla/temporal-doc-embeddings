@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00012
+Date: 2025-11-30
+Lifecycle ID: lifecycle_procurement_012
+
+Vendor: Global Supplies Inc
+Project: Project Echo
+
+Items:
+1. Component A - Quantity: 10 units - Unit Price: $371.00
+2. Component B - Quantity: 46 units - Unit Price: $928.00
+3. Service Package - Quantity: 1 - Unit Price: $4070.00
+
+Subtotal: $42856.00
+Tax: $1300.00
+Total: $52309.00
+
+Delivery Date: 2025-12-22
+Payment Terms: Net 30
+
+Status: PENDING

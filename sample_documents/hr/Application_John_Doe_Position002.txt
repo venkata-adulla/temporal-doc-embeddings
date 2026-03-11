@@ -1,0 +1,18 @@
+APPLICATION FORM
+
+Application ID: APP-2024-00002
+Date: 2026-02-11
+Lifecycle ID: lifecycle_hr_002
+
+Candidate: John Doe
+Position: DevOps Engineer
+
+Personal Information:
+- Email: john.doe@email.com
+- Phone: +1-555-452-8816
+- Location: City, State
+
+Availability: Immediate
+Expected Salary: $93184/year
+
+Status: SUBMITTED

@@ -1,0 +1,26 @@
+Purchase Order #: PO-67890
+Lifecycle ID: lifecycle_002
+Order Date: 2024-02-01
+Revision: 2
+Revision Date: 2024-02-20
+Vendor: Global Supplies Ltd.
+Buyer: TechCorp Industries
+
+Items:
+- Component X: 500 units @ $100.00 each
+- Component Y: 200 units @ $150.00 each
+- Component Z: 100 units @ $200.00 each (NEW ITEM)
+- Delivery: Standard shipping (45 days)
+- Total Amount: $100,000.00
+
+CHANGE ORDER #1: Added Component Z to order
+Additional Cost: +$20,000.00
+
+Terms and Conditions:
+- Payment: Net 45
+- Delivery Location: Warehouse B
+- Quality Standards: ISO 9001 compliant
+
+Status: Approved - Modified
+Approved By: Jane Doe
+Approval Date: 2024-02-20

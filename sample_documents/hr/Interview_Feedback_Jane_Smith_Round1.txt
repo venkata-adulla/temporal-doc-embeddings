@@ -1,0 +1,22 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00014
+Date: 2026-02-01
+Lifecycle ID: lifecycle_hr_014
+
+Candidate: Jane Smith
+Position: DevOps Engineer
+Round: 1
+
+Interviewer: Hiring Manager
+Duration: 69 minutes
+
+Technical Skills: Moderate
+Communication: Excellent
+Cultural Fit: High
+
+Overall Rating: 9/10
+
+Recommendation: Proceed to next round
+
+Status: COMPLETED

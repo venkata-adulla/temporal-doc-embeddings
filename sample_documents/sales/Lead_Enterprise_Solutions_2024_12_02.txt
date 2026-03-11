@@ -1,0 +1,17 @@
+LEAD INQUIRY
+
+Lead ID: LEAD-2024-00014
+Date: 2025-12-02
+Lifecycle ID: lifecycle_sales_014
+
+Company: Enterprise Solutions
+Contact Person: Contact Person Name
+Email: contact@enterprisesolutions.com
+Phone: +1-555-646-9000
+
+Interest: Enterprise Software
+Budget Range: $118143
+Timeline: Q3 2024
+
+Source: Referral
+Status: NEW

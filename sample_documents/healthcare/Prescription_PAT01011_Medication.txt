@@ -1,0 +1,16 @@
+PRESCRIPTION
+
+Prescription ID: RX-2024-00011
+Date: 2025-10-24
+Lifecycle ID: lifecycle_healthcare_011
+Patient ID: PAT01011
+
+Medication: Medication Name 4mg
+Dosage: 1 tablet(s) daily
+Duration: 18 days
+Refills: 3
+
+Prescribing Physician: Dr. Smith
+Pharmacy: Local Pharmacy
+
+Status: ACTIVE

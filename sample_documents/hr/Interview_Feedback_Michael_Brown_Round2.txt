@@ -1,0 +1,22 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00006
+Date: 2026-02-02
+Lifecycle ID: lifecycle_hr_006
+
+Candidate: Michael Brown
+Position: Data Scientist
+Round: 2
+
+Interviewer: Hiring Manager
+Duration: 59 minutes
+
+Technical Skills: Strong
+Communication: Excellent
+Cultural Fit: High
+
+Overall Rating: 9/10
+
+Recommendation: Proceed to next round
+
+Status: COMPLETED

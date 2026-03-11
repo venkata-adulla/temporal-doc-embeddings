@@ -1,0 +1,30 @@
+RESUME
+
+Candidate: David Martinez
+Date: 2025-12-28
+Lifecycle ID: lifecycle_hr_010
+Position Applied: DevOps Engineer
+
+PROFESSIONAL SUMMARY
+Experienced DevOps Engineer with 3 years of experience in software development and technology.
+
+WORK EXPERIENCE
+Senior DevOps Engineer | Tech Company Inc | 2020 - Present
+- Led development of multiple projects
+- Managed team of 9 engineers
+- Achieved 91% project success rate
+
+DevOps Engineer | Previous Company | 2018 - 2020
+- Developed and maintained software applications
+- Collaborated with cross-functional teams
+
+EDUCATION
+Bachelor of Science in Computer Science
+University Name | 2014 - 2018
+
+SKILLS
+- Programming Languages: Python, Java, JavaScript
+- Frameworks: React, Node.js, Django
+- Tools: Git, Docker, Kubernetes
+
+Status: ACTIVE

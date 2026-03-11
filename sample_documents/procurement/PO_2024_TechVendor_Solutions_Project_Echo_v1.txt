@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00004
+Date: 2026-01-11
+Lifecycle ID: lifecycle_procurement_004
+
+Vendor: TechVendor Solutions
+Project: Project Echo
+
+Items:
+1. Component A - Quantity: 55 units - Unit Price: $267.00
+2. Component B - Quantity: 31 units - Unit Price: $241.00
+3. Service Package - Quantity: 1 - Unit Price: $2111.00
+
+Subtotal: $21904.00
+Tax: $1499.00
+Total: $24904.00
+
+Delivery Date: 2026-01-29
+Payment Terms: Net 30
+
+Status: PENDING

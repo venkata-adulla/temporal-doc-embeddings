@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00010
+Date: 2025-12-22
+Lifecycle ID: lifecycle_procurement_010
+
+Vendor: Material Source Ltd
+Project: Project Alpha
+
+Items:
+1. Component A - Quantity: 24 units - Unit Price: $410.00
+2. Component B - Quantity: 6 units - Unit Price: $212.00
+3. Service Package - Quantity: 1 - Unit Price: $3868.00
+
+Subtotal: $48790.00
+Tax: $1387.00
+Total: $34772.00
+
+Delivery Date: 2026-01-08
+Payment Terms: Net 30
+
+Status: PENDING

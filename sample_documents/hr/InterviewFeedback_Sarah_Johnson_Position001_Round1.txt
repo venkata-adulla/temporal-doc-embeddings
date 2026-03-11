@@ -1,0 +1,24 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00001-01
+Date: 2024-03-08
+Application ID: APP-2024-00001
+Lifecycle ID: lifecycle_hr_001
+
+Candidate: Sarah Johnson
+Position: Senior Software Engineer
+Interview Round: Technical Screening
+
+Interviewer: John Smith (Tech Lead)
+Rating: 8/10
+
+Strengths:
+- Strong technical knowledge in Python and React
+- Good problem-solving approach
+- Clear communication
+
+Areas for Improvement:
+- Limited experience with microservices architecture
+
+Recommendation: Proceed to next round
+Status: PASSED

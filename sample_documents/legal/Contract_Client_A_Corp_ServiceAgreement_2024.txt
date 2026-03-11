@@ -1,0 +1,25 @@
+LEGAL CONTRACT
+
+Contract ID: LEG-2024-00009
+Date: 2025-09-30
+Lifecycle ID: lifecycle_legal_009
+
+Client: Client A Corp
+Matter Type: Contract Review
+
+Parties:
+1. Client A Corp
+2. Counterparty Name
+
+Terms:
+- Effective Date: 2025-09-30
+- Expiration Date: 2027-06-27
+- Value: $992400
+
+Key Provisions:
+1. Scope of services
+2. Payment terms
+3. Confidentiality
+4. Termination clauses
+
+Status: EXECUTED

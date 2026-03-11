@@ -1,0 +1,19 @@
+PATIENT RECORD
+
+Patient ID: PAT01004
+Date: 2026-02-17
+Lifecycle ID: lifecycle_healthcare_004
+
+Age: 71
+Gender: M
+Condition: Hypertension
+
+Vital Signs:
+- Blood Pressure: 128/88
+- Heart Rate: 67 bpm
+- Temperature: 97.8°F
+
+Diagnosis: Hypertension
+Treatment Plan: Medication and monitoring
+
+Status: ACTIVE

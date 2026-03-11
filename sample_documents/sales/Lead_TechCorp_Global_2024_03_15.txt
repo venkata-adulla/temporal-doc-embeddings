@@ -1,0 +1,18 @@
+LEAD
+
+Lead ID: LEAD-2024-00001
+Date: 2024-03-15
+Lifecycle ID: lifecycle_sales_001
+
+Company: TechCorp Global
+Contact: David Chen (CTO)
+Email: david.chen@techcorp.com
+Phone: +1-555-789-0123
+
+Industry: Technology
+Company Size: 500-1000 employees
+Budget: $200,000 - $500,000
+
+Interest: Enterprise software solution
+Source: Website inquiry
+Status: QUALIFIED

@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00010
+Date: 2026-01-17
+Lifecycle ID: lifecycle_procurement_010
+Related PO: PO-2024-00010
+
+Vendor: Material Source Ltd
+Project: Project Alpha
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 33 units - Unit Price: $172.00
+2. Component B - Quantity: 8 units - Unit Price: $363.00
+3. Service Package - Quantity: 1 - Unit Price: $3111.00
+
+Subtotal: $34908.00
+Tax: $2269.00
+Total: $43402.00
+
+Payment Due: 2026-02-16
+Status: PENDING

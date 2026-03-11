@@ -1,0 +1,22 @@
+OFFER LETTER
+
+Offer ID: OFF-2024-00010
+Date: 2026-01-13
+Lifecycle ID: lifecycle_hr_010
+
+Candidate: David Martinez
+Position: DevOps Engineer
+
+Dear David,
+
+We are pleased to offer you the position of DevOps Engineer at our company.
+
+Offer Details:
+- Start Date: 2026-02-07
+- Salary: $126145/year
+- Benefits: Health, Dental, Vision, 401(k)
+- Vacation: 20 days per year
+
+Please respond by 2026-01-20.
+
+Status: ACCEPTED

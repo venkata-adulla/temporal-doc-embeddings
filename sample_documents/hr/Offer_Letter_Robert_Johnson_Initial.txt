@@ -1,0 +1,22 @@
+OFFER LETTER
+
+Offer ID: OFF-2024-00015
+Date: 2026-01-23
+Lifecycle ID: lifecycle_hr_015
+
+Candidate: Robert Johnson
+Position: Product Manager
+
+Dear Robert,
+
+We are pleased to offer you the position of Product Manager at our company.
+
+Offer Details:
+- Start Date: 2026-02-08
+- Salary: $111856/year
+- Benefits: Health, Dental, Vision, 401(k)
+- Vacation: 24 days per year
+
+Please respond by 2026-01-30.
+
+Status: ACCEPTED

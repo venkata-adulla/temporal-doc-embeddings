@@ -1,0 +1,30 @@
+RESUME
+
+Candidate: Michael Brown
+Date: 2026-01-31
+Lifecycle ID: lifecycle_hr_013
+Position Applied: Product Manager
+
+PROFESSIONAL SUMMARY
+Experienced Product Manager with 6 years of experience in software development and technology.
+
+WORK EXPERIENCE
+Senior Product Manager | Tech Company Inc | 2020 - Present
+- Led development of multiple projects
+- Managed team of 6 engineers
+- Achieved 97% project success rate
+
+Product Manager | Previous Company | 2018 - 2020
+- Developed and maintained software applications
+- Collaborated with cross-functional teams
+
+EDUCATION
+Bachelor of Science in Computer Science
+University Name | 2014 - 2018
+
+SKILLS
+- Programming Languages: Python, Java, JavaScript
+- Frameworks: React, Node.js, Django
+- Tools: Git, Docker, Kubernetes
+
+Status: ACTIVE

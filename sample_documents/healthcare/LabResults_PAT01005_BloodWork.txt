@@ -1,0 +1,15 @@
+LAB RESULTS
+
+Lab ID: LAB-2024-00005
+Date: 2025-11-27
+Lifecycle ID: lifecycle_healthcare_005
+Patient ID: PAT01005
+
+Test Type: Blood Work
+
+Results:
+- Glucose: 124 mg/dL
+- Cholesterol: 152 mg/dL
+- Hemoglobin: 13 g/dL
+
+Status: REVIEW

@@ -1,0 +1,19 @@
+PATIENT RECORD
+
+Patient ID: PAT01015
+Date: 2025-09-06
+Lifecycle ID: lifecycle_healthcare_015
+
+Age: 65
+Gender: M
+Condition: General Checkup
+
+Vital Signs:
+- Blood Pressure: 131/82
+- Heart Rate: 98 bpm
+- Temperature: 97.3°F
+
+Diagnosis: General Checkup
+Treatment Plan: Medication and monitoring
+
+Status: ACTIVE

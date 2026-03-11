@@ -1,0 +1,22 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00010
+Date: 2026-01-05
+Lifecycle ID: lifecycle_hr_010
+
+Candidate: David Martinez
+Position: DevOps Engineer
+Round: 1
+
+Interviewer: Hiring Manager
+Duration: 54 minutes
+
+Technical Skills: Moderate
+Communication: Good
+Cultural Fit: High
+
+Overall Rating: 7/10
+
+Recommendation: Proceed to next round
+
+Status: COMPLETED

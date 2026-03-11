@@ -1,0 +1,25 @@
+LEGAL CONTRACT
+
+Contract ID: LEG-2024-00011
+Date: 2025-09-05
+Lifecycle ID: lifecycle_legal_011
+
+Client: Client D Partners
+Matter Type: Litigation Support
+
+Parties:
+1. Client D Partners
+2. Counterparty Name
+
+Terms:
+- Effective Date: 2025-09-05
+- Expiration Date: 2027-02-11
+- Value: $192688
+
+Key Provisions:
+1. Scope of services
+2. Payment terms
+3. Confidentiality
+4. Termination clauses
+
+Status: EXECUTED

@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00003
+Date: 2025-12-22
+Lifecycle ID: lifecycle_procurement_003
+
+Vendor: TechVendor Solutions
+Project: Project Delta
+
+Items:
+1. Component A - Quantity: 40 units - Unit Price: $469.00
+2. Component B - Quantity: 32 units - Unit Price: $273.00
+3. Service Package - Quantity: 1 - Unit Price: $1543.00
+
+Subtotal: $33857.00
+Tax: $584.00
+Total: $14809.00
+
+Delivery Date: 2026-01-06
+Payment Terms: Net 30
+
+Status: PENDING

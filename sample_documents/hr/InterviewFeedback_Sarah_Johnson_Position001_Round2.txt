@@ -1,0 +1,24 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00001-02
+Date: 2024-03-15
+Application ID: APP-2024-00001
+Lifecycle ID: lifecycle_hr_001
+
+Candidate: Sarah Johnson
+Position: Senior Software Engineer
+Interview Round: System Design & Culture Fit
+
+Interviewers: 
+- Jane Doe (Engineering Manager)
+- Mike Wilson (Senior Engineer)
+
+Rating: 9/10
+
+Strengths:
+- Excellent system design thinking
+- Great cultural fit
+- Strong leadership potential
+
+Recommendation: Strong hire
+Status: PASSED

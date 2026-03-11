@@ -1,0 +1,17 @@
+EXPENSE REPORT
+
+Report ID: EXP-2024-00013
+Date: 2025-12-24
+Lifecycle ID: lifecycle_finance_013
+Department: IT
+Employee: Employee 013
+
+Expenses:
+1. Travel: $1935.00
+2. Meals: $305.00
+3. Supplies: $215.00
+4. Other: $465.00
+
+Total: $4639.00
+
+Status: APPROVED

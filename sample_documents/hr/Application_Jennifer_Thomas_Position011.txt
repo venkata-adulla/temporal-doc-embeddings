@@ -1,0 +1,18 @@
+APPLICATION FORM
+
+Application ID: APP-2024-00011
+Date: 2026-01-06
+Lifecycle ID: lifecycle_hr_011
+
+Candidate: Jennifer Thomas
+Position: Software Engineer
+
+Personal Information:
+- Email: jennifer.thomas@email.com
+- Phone: +1-555-900-3598
+- Location: City, State
+
+Availability: Immediate
+Expected Salary: $107294/year
+
+Status: SUBMITTED

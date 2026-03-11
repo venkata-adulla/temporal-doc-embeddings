@@ -1,0 +1,15 @@
+PRESCRIPTION
+
+Prescription ID: RX-2024-00001
+Date: 2024-03-15
+Patient ID: PAT01001
+Lifecycle ID: lifecycle_healthcare_001
+Version: v1
+
+Medications:
+1. Metformin 500mg - Quantity: 60 tablets - Take 1 tablet twice daily
+2. Lisinopril 10mg - Quantity: 30 tablets - Take 1 tablet daily
+
+Duration: 30 days
+Refills: 2
+Status: PRESCRIBED

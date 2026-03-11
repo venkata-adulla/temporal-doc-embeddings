@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads and data
+backend/uploads/*
+!backend/uploads/.gitkeep
+*.db
+*.sqlite
+
+# Docker volumes (already in Docker, don't commit)
+# Docker volumes are managed separately
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+_canonical_*
+_rebuild_*.py
+_reupload_*.py
+_qdrant_cleanup.py
+
+# Build outputs
+frontend/dist/
+frontend/.vite/
+backend/.pytest_cache/
+.coverage
+htmlcov/

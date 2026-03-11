@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00008
+Date: 2026-02-22
+Lifecycle ID: lifecycle_procurement_008
+Related PO: PO-2024-00008
+
+Vendor: Industrial Parts Co
+Project: Project Echo
+
+Change Reason: Price Adjustment
+
+Original Amount: $21988.00
+Change Amount: $-1911.00
+New Total: $35999.00
+
+New Delivery Date: 2026-03-13
+
+Status: APPROVED

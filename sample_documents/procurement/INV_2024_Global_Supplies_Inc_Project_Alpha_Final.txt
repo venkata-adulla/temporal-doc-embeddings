@@ -1,0 +1,24 @@
+INVOICE
+
+Invoice Number: INV-2024-00001
+Date: 2024-02-28
+Lifecycle ID: lifecycle_procurement_001
+Related PO: PO-2024-00001
+Related CO: CO-2024-00001
+
+Vendor: Global Supplies Inc
+Project: Project Alpha
+
+Items:
+1. Component A - 75 units @ $500.00 = $37,500.00
+2. Component B - 25 units @ $1,200.00 = $30,000.00
+3. Service Package - 1 @ $5,000.00 = $5,000.00
+4. Rush Delivery Fee - 1 @ $3,000.00 = $3,000.00
+5. Additional Handling - 1 @ $1,500.00 = $1,500.00 [NEW]
+
+Subtotal: $77,000.00
+Tax: $3,850.00
+Total: $80,850.00
+
+Payment Terms: Net 30
+Status: PAID

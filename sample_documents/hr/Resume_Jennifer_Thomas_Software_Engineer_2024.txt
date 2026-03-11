@@ -1,0 +1,30 @@
+RESUME
+
+Candidate: Jennifer Thomas
+Date: 2026-01-05
+Lifecycle ID: lifecycle_hr_011
+Position Applied: Software Engineer
+
+PROFESSIONAL SUMMARY
+Experienced Software Engineer with 8 years of experience in software development and technology.
+
+WORK EXPERIENCE
+Senior Software Engineer | Tech Company Inc | 2020 - Present
+- Led development of multiple projects
+- Managed team of 7 engineers
+- Achieved 90% project success rate
+
+Software Engineer | Previous Company | 2018 - 2020
+- Developed and maintained software applications
+- Collaborated with cross-functional teams
+
+EDUCATION
+Bachelor of Science in Computer Science
+University Name | 2014 - 2018
+
+SKILLS
+- Programming Languages: Python, Java, JavaScript
+- Frameworks: React, Node.js, Django
+- Tools: Git, Docker, Kubernetes
+
+Status: ACTIVE

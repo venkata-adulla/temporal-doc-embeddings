@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00011
+Date: 2026-03-23
+Lifecycle ID: lifecycle_procurement_011
+Related PO: PO-2024-00011
+
+Vendor: Industrial Parts Co
+Project: Project Beta
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 34 units - Unit Price: $117.00
+2. Component B - Quantity: 37 units - Unit Price: $314.00
+3. Service Package - Quantity: 1 - Unit Price: $3704.00
+
+Subtotal: $14786.00
+Tax: $1731.00
+Total: $15860.00
+
+Payment Due: 2026-04-22
+Status: PENDING

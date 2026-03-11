@@ -1,0 +1,22 @@
+INTERVIEW FEEDBACK
+
+Interview ID: INT-2024-00001
+Date: 2026-01-13
+Lifecycle ID: lifecycle_hr_001
+
+Candidate: Jane Smith
+Position: Product Manager
+Round: 2
+
+Interviewer: Hiring Manager
+Duration: 70 minutes
+
+Technical Skills: Strong
+Communication: Excellent
+Cultural Fit: High
+
+Overall Rating: 9/10
+
+Recommendation: Under consideration
+
+Status: COMPLETED

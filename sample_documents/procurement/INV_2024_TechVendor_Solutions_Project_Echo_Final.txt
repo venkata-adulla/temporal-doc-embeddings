@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00004
+Date: 2026-02-04
+Lifecycle ID: lifecycle_procurement_004
+Related PO: PO-2024-00004
+
+Vendor: TechVendor Solutions
+Project: Project Echo
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 20 units - Unit Price: $252.00
+2. Component B - Quantity: 16 units - Unit Price: $578.00
+3. Service Package - Quantity: 1 - Unit Price: $1410.00
+
+Subtotal: $19582.00
+Tax: $1561.00
+Total: $26134.00
+
+Payment Due: 2026-03-06
+Status: PAID

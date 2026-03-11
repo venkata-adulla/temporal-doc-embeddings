@@ -1,0 +1,18 @@
+APPLICATION FORM
+
+Application ID: APP-2024-00005
+Date: 2026-01-18
+Lifecycle ID: lifecycle_hr_005
+
+Candidate: Robert Johnson
+Position: Data Scientist
+
+Personal Information:
+- Email: robert.johnson@email.com
+- Phone: +1-555-889-6728
+- Location: City, State
+
+Availability: Immediate
+Expected Salary: $131198/year
+
+Status: SUBMITTED

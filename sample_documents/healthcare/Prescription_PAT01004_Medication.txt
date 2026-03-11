@@ -1,0 +1,16 @@
+PRESCRIPTION
+
+Prescription ID: RX-2024-00004
+Date: 2026-02-18
+Lifecycle ID: lifecycle_healthcare_004
+Patient ID: PAT01004
+
+Medication: Medication Name 3mg
+Dosage: 1 tablet(s) daily
+Duration: 8 days
+Refills: 1
+
+Prescribing Physician: Dr. Smith
+Pharmacy: Local Pharmacy
+
+Status: ACTIVE

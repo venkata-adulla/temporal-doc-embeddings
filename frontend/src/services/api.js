@@ -1,0 +1,167 @@
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:8000",
+  headers: {
+    "X-API-Key": "dev-local-key"
+  }
+});
+
+// Add response interceptor for error handling
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    const message = error.response?.data?.detail || error.message || "An error occurred";
+    console.error("API Error:", message);
+    return Promise.reject(new Error(message));
+  }
+);
+
+export async function uploadDocument(formData) {
+  console.log("Sending upload request to /api/documents/upload");
+  try {
+    const { data } = await api.post("/api/documents/upload", formData, {
+      headers: { 
+        "Content-Type": "multipart/form-data",
+        "X-API-Key": "dev-local-key"
+      },
+      timeout: 60000 // 60 second timeout for large files
+    });
+    console.log("Upload response received:", data);
+    return data;
+  } catch (error) {
+    console.error("Upload API error:", {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status,
+      statusText: error.response?.statusText
+    });
+    throw error;
+  }
+}
+
+export async function fetchLifecycle(lifecycleId) {
+  const { data } = await api.get(`/api/lifecycles/${lifecycleId}`);
+  return data;
+}
+
+export async function listLifecycles(search = null) {
+  const params = search ? { search } : {};
+  const { data } = await api.get("/api/lifecycles", { params });
+  return data;
+}
+
+export async function fetchLifecycleGraph(lifecycleId) {
+  const { data } = await api.get(`/api/lifecycles/${lifecycleId}/graph`);
+  return data;
+}
+
+export async function fetchPrediction(lifecycleId) {
+  const { data } = await api.get(`/api/predictions/${lifecycleId}/risk`);
+  return data;
+}
+
+export async function listDocuments(lifecycleId = null, search = null) {
+  const params = {};
+  if (lifecycleId) params.lifecycle_id = lifecycleId;
+  if (search) params.search = search;
+  const { data } = await api.get("/api/documents", { params });
+  return data;
+}
+
+export async function listOutcomes(lifecycleId = null, outcomeType = null) {
+  const params = {};
+  if (lifecycleId) params.lifecycle_id = lifecycleId;
+  if (outcomeType) params.outcome_type = outcomeType;
+  const { data } = await api.get("/api/outcomes", { params });
+  return data;
+}
+
+export async function createOutcome(payload) {
+  const { data } = await api.post("/api/outcomes", payload);
+  return data;
+}
+
+export async function fetchDashboardStats() {
+  const { data } = await api.get("/api/dashboard/stats");
+  return data;
+}
+
+export async function fetchNotifications() {
+  const { data } = await api.get("/api/dashboard/notifications");
+  return data;
+}
+
+export async function fetchDocumentStats() {
+  const { data } = await api.get("/api/documents/stats");
+  return data;
+}
+
+export async function fetchHealthStatus() {
+  const { data } = await api.get("/health/detailed");
+  return data;
+}
+
+export async function fetchLifecycleMetrics(lifecycleId) {
+  const { data } = await api.get(`/api/lifecycles/${lifecycleId}/metrics`);
+  return data;
+}
+
+export async function fetchDeltaAnalysis(lifecycleId) {
+  const { data } = await api.get(`/api/lifecycles/${lifecycleId}/delta-analysis`);
+  return data;
+}
+
+export async function fetchTrends(lifecycleId) {
+  const { data } = await api.get(`/api/predictions/${lifecycleId}/trends`);
+  return data;
+}
+
+export async function queryChatbot(question, sessionId = null) {
+  const payload = { question };
+  if (sessionId) payload.session_id = sessionId;
+  const { data } = await api.post("/api/chatbot/query", payload);
+  return data;
+}
+
+function parseFilenameFromContentDisposition(contentDisposition) {
+  if (!contentDisposition) return null;
+  const match = /filename="?([^"]+)"?/i.exec(contentDisposition);
+  return match?.[1] || null;
+}
+
+export async function downloadLifecycleExport(lifecycleId, format) {
+  try {
+    const response = await api.get(`/api/lifecycles/${lifecycleId}/export`, {
+      params: { format },
+      responseType: "blob"
+    });
+
+    const contentDisposition = response.headers?.["content-disposition"];
+    const defaultExt = format === "csv" ? "csv" : format === "pdf" ? "pdf" : "json";
+    const filename =
+      parseFilenameFromContentDisposition(contentDisposition) ||
+      `lifecycle_${lifecycleId}.${defaultExt}`;
+
+    return {
+      blob: response.data,
+      filename,
+      contentType: response.headers?.["content-type"] || "application/octet-stream"
+    };
+  } catch (error) {
+    // If backend returned JSON error as blob, extract "detail"
+    const contentType = error?.response?.headers?.["content-type"] || "";
+    const data = error?.response?.data;
+    if (data instanceof Blob && contentType.includes("application/json")) {
+      try {
+        const text = await data.text();
+        const parsed = JSON.parse(text);
+        const message = parsed?.detail || error.message;
+        throw new Error(message);
+      } catch {
+        // fall through
+      }
+    }
+    throw error;
+  }
+}

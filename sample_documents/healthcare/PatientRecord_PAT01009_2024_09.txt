@@ -1,0 +1,19 @@
+PATIENT RECORD
+
+Patient ID: PAT01009
+Date: 2025-09-01
+Lifecycle ID: lifecycle_healthcare_009
+
+Age: 66
+Gender: M
+Condition: Respiratory Issue
+
+Vital Signs:
+- Blood Pressure: 120/81
+- Heart Rate: 84 bpm
+- Temperature: 97.8°F
+
+Diagnosis: Respiratory Issue
+Treatment Plan: Medication and monitoring
+
+Status: ACTIVE

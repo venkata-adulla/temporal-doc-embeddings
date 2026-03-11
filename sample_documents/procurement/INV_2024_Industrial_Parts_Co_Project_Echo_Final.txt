@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00008
+Date: 2026-03-09
+Lifecycle ID: lifecycle_procurement_008
+Related PO: PO-2024-00008
+
+Vendor: Industrial Parts Co
+Project: Project Echo
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 34 units - Unit Price: $275.00
+2. Component B - Quantity: 24 units - Unit Price: $382.00
+3. Service Package - Quantity: 1 - Unit Price: $1916.00
+
+Subtotal: $35431.00
+Tax: $892.00
+Total: $26654.00
+
+Payment Due: 2026-04-08
+Status: PAID

@@ -1,0 +1,19 @@
+CHANGE ORDER
+
+CO Number: CO-2024-00014
+Date: 2026-01-07
+Lifecycle ID: lifecycle_procurement_014
+Related PO: PO-2024-00014
+
+Vendor: Industrial Parts Co
+Project: Project Gamma
+
+Change Reason: Delivery Delay
+
+Original Amount: $22335.00
+Change Amount: $2693.00
+New Total: $31742.00
+
+New Delivery Date: 2026-01-23
+
+Status: APPROVED

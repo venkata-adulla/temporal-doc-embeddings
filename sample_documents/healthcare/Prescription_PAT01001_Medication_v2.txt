@@ -1,0 +1,17 @@
+PRESCRIPTION (REVISED)
+
+Prescription ID: RX-2024-00001
+Date: 2024-04-10
+Patient ID: PAT01001
+Lifecycle ID: lifecycle_healthcare_001
+Version: v2
+
+Medications:
+1. Metformin 1000mg - Quantity: 60 tablets - Take 1 tablet twice daily [CHANGED: Increased dosage]
+2. Lisinopril 10mg - Quantity: 30 tablets - Take 1 tablet daily
+3. Atorvastatin 20mg - Quantity: 30 tablets - Take 1 tablet daily [NEW MEDICATION]
+
+Duration: 30 days
+Refills: 3
+Reason: Blood glucose not controlled, added cholesterol management
+Status: PRESCRIBED

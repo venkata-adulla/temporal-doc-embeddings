@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-00013
+Date: 2025-12-29
+Lifecycle ID: lifecycle_procurement_013
+
+Vendor: Acme Corp
+Project: Project Delta
+
+Items:
+1. Component A - Quantity: 93 units - Unit Price: $112.00
+2. Component B - Quantity: 12 units - Unit Price: $809.00
+3. Service Package - Quantity: 1 - Unit Price: $2851.00
+
+Subtotal: $35367.00
+Tax: $615.00
+Total: $30544.00
+
+Delivery Date: 2026-01-27
+Payment Terms: Net 30
+
+Status: PENDING

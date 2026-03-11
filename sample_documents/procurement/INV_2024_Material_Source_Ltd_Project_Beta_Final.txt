@@ -1,0 +1,26 @@
+INVOICE
+
+Invoice Number: INV-2024-00015
+Date: 2026-02-14
+Lifecycle ID: lifecycle_procurement_015
+Related PO: PO-2024-00015
+
+Vendor: Material Source Ltd
+Project: Project Beta
+
+Bill To:
+Company XYZ
+123 Business Street
+City, State 12345
+
+Items:
+1. Component A - Quantity: 15 units - Unit Price: $215.00
+2. Component B - Quantity: 11 units - Unit Price: $146.00
+3. Service Package - Quantity: 1 - Unit Price: $4938.00
+
+Subtotal: $28495.00
+Tax: $1874.00
+Total: $49112.00
+
+Payment Due: 2026-03-16
+Status: PAID
