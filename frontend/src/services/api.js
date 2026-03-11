@@ -163,7 +163,7 @@ export async function fetchDocumentStats() {
 }
 
 export async function fetchHealthStatus() {
-  const { data } = await api.get("/health/detailed");
+  const { data } = await api.get(withApiPrefix("/health/detailed"));
   return data;
 }
 

@@ -49,12 +49,14 @@ def root():
 
 
 @app.get("/health")
+@app.get("/api/health")
 def health_check() -> dict:
     """Basic health check."""
     return {"status": "ok"}
 
 
 @app.get("/health/detailed")
+@app.get("/api/health/detailed")
 def detailed_health_check() -> dict:
     """Detailed health check for all services."""
     import logging
