@@ -40,7 +40,22 @@ function withApiPrefix(path) {
 // Add response interceptor for error handling
 api.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
+    const originalConfig = error.config || {};
+    const statusCode = error.response?.status;
+
+    if (statusCode === 404) {
+      const candidates = originalConfig.__fallbackCandidates || buildFallbackUrls(originalConfig.url);
+      if (candidates.length > 0) {
+        const [nextUrl, ...rest] = candidates;
+        return api.request({
+          ...originalConfig,
+          url: nextUrl,
+          __fallbackCandidates: rest
+        });
+      }
+    }
+
     const message = error.response?.data?.detail || error.message || "An error occurred";
     console.error("API Error:", message);
     return Promise.reject(new Error(message));
