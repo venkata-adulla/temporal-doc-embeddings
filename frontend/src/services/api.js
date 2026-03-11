@@ -1,10 +1,28 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:8000",
-  headers: {
-    "X-API-Key": "dev-local-key"
+const DEFAULT_DEV_API_BASE_URL = "http://localhost:8000";
+
+function normalizeBaseUrl(url) {
+  return (url || "").replace(/\/+$/, "");
+}
+
+function resolveApiBaseUrl() {
+  const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL;
+  if (configuredBaseUrl) {
+    return normalizeBaseUrl(configuredBaseUrl);
   }
+
+  // In production default to same-origin so deployments can use rewrites/proxies.
+  return import.meta.env.DEV ? DEFAULT_DEV_API_BASE_URL : "";
+}
+
+const API_BASE_URL = resolveApiBaseUrl();
+const API_KEY = import.meta.env.VITE_API_KEY || "dev-local-key";
+const defaultHeaders = API_KEY ? { "X-API-Key": API_KEY } : {};
+
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  headers: defaultHeaders
 });
 
 // Add response interceptor for error handling
@@ -23,7 +41,7 @@ export async function uploadDocument(formData) {
     const { data } = await api.post("/api/documents/upload", formData, {
       headers: { 
         "Content-Type": "multipart/form-data",
-        "X-API-Key": "dev-local-key"
+        ...defaultHeaders
       },
       timeout: 60000 // 60 second timeout for large files
     });
