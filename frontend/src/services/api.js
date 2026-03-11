@@ -37,7 +37,7 @@ function withApiPrefix(path) {
   return `${API_PREFIX}${path}`;
 }
 
-// Add response interceptor for error handling
+// Add response interceptor for error handling and route fallback.
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
@@ -45,7 +45,27 @@ api.interceptors.response.use(
     const statusCode = error.response?.status;
 
     if (statusCode === 404) {
-      const candidates = originalConfig.__fallbackCandidates || buildFallbackUrls(originalConfig.url);
+      const resolveFallbackCandidates = (url) => {
+        if (!url || typeof url !== "string") return [];
+
+        if (url.startsWith("/api/api/")) {
+          return [url.replace(/^\/api\/api\//, "/api/"), url.replace(/^\/api\/api\//, "/")];
+        }
+
+        if (url.startsWith("/api/")) {
+          return [url.replace(/^\/api\//, "/api/api/"), url.replace(/^\/api\//, "/")];
+        }
+
+        if (url.startsWith("/")) {
+          return [`/api${url}`, `/api/api${url}`];
+        }
+
+        return [];
+      };
+
+      const candidates =
+        originalConfig.__fallbackCandidates || resolveFallbackCandidates(originalConfig.url);
+
       if (candidates.length > 0) {
         const [nextUrl, ...rest] = candidates;
         return api.request({
@@ -65,7 +85,7 @@ api.interceptors.response.use(
 export async function uploadDocument(formData) {
   console.log("Sending upload request to /api/documents/upload");
   try {
-    const { data } = await api.post("/api/documents/upload", formData, {
+    const { data } = await api.post(withApiPrefix("/documents/upload"), formData, {
       headers: { 
         "Content-Type": "multipart/form-data",
         ...defaultHeaders
