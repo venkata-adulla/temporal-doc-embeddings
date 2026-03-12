@@ -8,9 +8,8 @@ from api.middleware.auth import require_api_key
 from models.prediction import RiskPrediction
 from services.prediction_service import PredictionService
 from services.lifecycle_service import LifecycleService
-from core.database import get_neo4j_connection, get_qdrant_connection
+from core.database import get_neo4j_connection
 from neo4j import GraphDatabase
-from qdrant_client import QdrantClient
 
 router = APIRouter(dependencies=[require_api_key()])
 

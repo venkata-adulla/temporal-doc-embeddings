@@ -10,10 +10,9 @@ backend_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(backend_dir))
 
 from neo4j import GraphDatabase
-from qdrant_client import QdrantClient
 import psycopg2
 
-from core.database import get_neo4j_connection, get_postgres_connection, get_qdrant_connection
+from core.database import create_qdrant_client, get_neo4j_connection, get_postgres_connection
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -89,8 +88,7 @@ def clear_postgres():
 def clear_qdrant():
     """Clear all data from Qdrant and reinitialize collections."""
     try:
-        qdrant_config = get_qdrant_connection()
-        qdrant_client = QdrantClient(host=qdrant_config.host, port=qdrant_config.port)
+        qdrant_client = create_qdrant_client()
         
         # Get all collections
         collections = qdrant_client.get_collections()

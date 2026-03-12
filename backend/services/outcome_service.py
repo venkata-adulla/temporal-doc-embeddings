@@ -5,7 +5,7 @@ from typing import List, Optional
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
-from core.database import get_postgres_connection
+from core.database import build_postgres_connect_kwargs
 from models.outcome import OutcomeCreate, OutcomeResponse
 
 logger = logging.getLogger(__name__)
@@ -13,52 +13,46 @@ logger = logging.getLogger(__name__)
 
 class OutcomeService:
     def __init__(self):
+        self.conn_kwargs = None
         try:
-            pg_config = get_postgres_connection()
-            self.conn_string = (
-                f"host={pg_config.host} "
-                f"port={pg_config.port} "
-                f"dbname={pg_config.database} "
-                f"user={pg_config.user} "
-                f"password={pg_config.password}"
-            )
+            self.conn_kwargs = build_postgres_connect_kwargs(timeout=5)
+            with self._get_connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute("SELECT 1")
             self._ensure_table()
             logger.info("Connected to PostgreSQL")
         except Exception as e:
             logger.error(f"Failed to connect to PostgreSQL: {e}")
-            self.conn_string = None
+            self.conn_kwargs = None
 
     def _get_connection(self):
         """Get a PostgreSQL connection."""
-        if not self.conn_string:
+        if not self.conn_kwargs:
             raise ConnectionError("PostgreSQL not configured")
-        return psycopg2.connect(self.conn_string)
+        return psycopg2.connect(**self.conn_kwargs)
 
     def _ensure_table(self):
         """Ensure the outcomes table exists."""
-        if not self.conn_string:
+        if not self.conn_kwargs:
             return
 
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cur:
-                    cur.execute("""
-                        CREATE TABLE IF NOT EXISTS outcomes (
-                            outcome_id VARCHAR(255) PRIMARY KEY,
-                            lifecycle_id VARCHAR(255) NOT NULL,
-                            outcome_type VARCHAR(100) NOT NULL,
-                            value DOUBLE PRECISION NOT NULL,
-                            recorded_at TIMESTAMP NOT NULL,
-                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                        );
-                        CREATE INDEX IF NOT EXISTS idx_outcomes_lifecycle 
-                            ON outcomes(lifecycle_id);
-                        CREATE INDEX IF NOT EXISTS idx_outcomes_type 
-                            ON outcomes(outcome_type);
-                    """)
-                    conn.commit()
-        except Exception as e:
-            logger.error(f"Failed to ensure outcomes table: {e}")
+        with self._get_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS outcomes (
+                        outcome_id VARCHAR(255) PRIMARY KEY,
+                        lifecycle_id VARCHAR(255) NOT NULL,
+                        outcome_type VARCHAR(100) NOT NULL,
+                        value DOUBLE PRECISION NOT NULL,
+                        recorded_at TIMESTAMP NOT NULL,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    );
+                    CREATE INDEX IF NOT EXISTS idx_outcomes_lifecycle
+                        ON outcomes(lifecycle_id);
+                    CREATE INDEX IF NOT EXISTS idx_outcomes_type
+                        ON outcomes(outcome_type);
+                """)
+                conn.commit()
 
     def list_outcomes(
         self,
@@ -67,7 +61,7 @@ class OutcomeService:
         limit: int = 100
     ) -> List[OutcomeResponse]:
         """List outcomes with optional filters."""
-        if not self.conn_string:
+        if not self.conn_kwargs:
             return []
 
         try:
@@ -106,11 +100,11 @@ class OutcomeService:
 
     def create_outcome(self, payload: OutcomeCreate) -> OutcomeResponse:
         """Create a new outcome."""
-        if not self.conn_string:
+        if not self.conn_kwargs:
             raise ConnectionError("PostgreSQL not configured")
 
         outcome_id = str(uuid.uuid4())
-        
+
         try:
             with self._get_connection() as conn:
                 with conn.cursor() as cur:
@@ -136,14 +130,14 @@ class OutcomeService:
 
     def get_outcome_stats(self, lifecycle_id: str) -> dict:
         """Get outcome statistics for a lifecycle."""
-        if not self.conn_string:
+        if not self.conn_kwargs:
             return {}
 
         try:
             with self._get_connection() as conn:
                 with conn.cursor(cursor_factory=RealDictCursor) as cur:
                     cur.execute("""
-                        SELECT 
+                        SELECT
                             outcome_type,
                             COUNT(*) as count,
                             AVG(value) as avg_value,

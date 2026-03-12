@@ -10,10 +10,9 @@ from urllib import error as url_error
 from urllib import request as url_request
 
 from neo4j import GraphDatabase
-from qdrant_client import QdrantClient
 
 from core.config import get_settings
-from core.database import get_neo4j_connection, get_qdrant_connection
+from core.database import create_qdrant_client, get_neo4j_connection
 from services.embedding_service import EmbeddingService
 from services.lifecycle_service import LifecycleService
 from services.prediction_service import PredictionService
@@ -316,8 +315,7 @@ class ChatbotService:
                         qdrant_filenames = {}
                         if all_doc_ids:
                             try:
-                                qconf = get_qdrant_connection()
-                                qclient = QdrantClient(host=qconf.host, port=qconf.port)
+                                qclient = create_qdrant_client()
                                 offset = None
                                 found_count = 0
                                 while found_count < len(all_doc_ids):
@@ -710,8 +708,7 @@ class ChatbotService:
 
         # Qdrant document count via scroll (avoids strict schema parsing issues).
         try:
-            qconf = get_qdrant_connection()
-            qclient = QdrantClient(host=qconf.host, port=qconf.port)
+            qclient = create_qdrant_client()
             total_docs = 0
             offset = None
             while True:
@@ -788,8 +785,7 @@ class ChatbotService:
             return chunks, sources
 
         try:
-            qconf = get_qdrant_connection()
-            qclient = QdrantClient(host=qconf.host, port=qconf.port)
+            qclient = create_qdrant_client()
             embedder = self._get_embedder()
             query_vec = embedder.embed(question) if embedder else None
 

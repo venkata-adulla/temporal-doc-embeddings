@@ -7,11 +7,10 @@ backend_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(backend_dir))
 
 from neo4j import GraphDatabase
-from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams
 
 from core.config import get_settings
-from core.database import get_neo4j_connection, get_postgres_connection, get_qdrant_connection
+from core.database import create_qdrant_client, get_neo4j_connection, get_postgres_connection
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -98,9 +97,7 @@ def init_qdrant():
     """Initialize Qdrant collection."""
     try:
         settings = get_settings()
-        qdrant_config = get_qdrant_connection()
-        
-        client = QdrantClient(host=qdrant_config.host, port=qdrant_config.port)
+        client = create_qdrant_client()
         
         # Get embedding dimensions - try to load model, fallback to known dimensions
         dimensions = 1024  # Default for BAAI/bge-large-en-v1.5

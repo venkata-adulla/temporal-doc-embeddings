@@ -14,9 +14,13 @@ class Settings(BaseSettings):
     postgres_db: str = "outcomes_db"
     postgres_user: str = "postgres"
     postgres_password: str = "password123"
+    postgres_hostaddr: str = ""
+    postgres_sslmode: str = "prefer"
 
     qdrant_host: str = "localhost"
     qdrant_port: int = 6333
+    qdrant_api_key: str = ""
+    qdrant_url: str = ""
 
     embedding_model: str = "BAAI/bge-large-en-v1.5"
     spacy_model: str = "en_core_web_sm"

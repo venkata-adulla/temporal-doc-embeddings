@@ -2,11 +2,10 @@ import logging
 from datetime import datetime
 from typing import List, Optional
 
-from neo4j import GraphDatabase
 from dateutil.parser import parse as parse_date
 
 from core.config import get_settings
-from core.database import get_neo4j_connection
+from core.database import create_neo4j_driver
 from models.lifecycle import LifecycleEvent, LifecycleResponse
 
 logger = logging.getLogger(__name__)
@@ -53,11 +52,7 @@ class LifecycleService:
 
     def __init__(self):
         try:
-            neo4j_config = get_neo4j_connection()
-            self.driver = GraphDatabase.driver(
-                neo4j_config.uri,
-                auth=(neo4j_config.user, neo4j_config.password)
-            )
+            self.driver = create_neo4j_driver(connection_timeout=10)
             logger.info("Connected to Neo4j")
         except Exception as e:
             logger.error(f"Failed to connect to Neo4j: {e}")
