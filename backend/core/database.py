@@ -114,10 +114,6 @@ def get_qdrant_connection() -> QdrantConnection:
         port=settings.qdrant_port,
         api_key=_normalize_secret_value(settings.qdrant_api_key),
         url=_normalize_secret_value(settings.qdrant_url),
-        host=settings.qdrant_host,
-        port=settings.qdrant_port,
-        api_key=settings.qdrant_api_key,
-        url=settings.qdrant_url,
     )
 
 
