@@ -1,6 +1,8 @@
+import socket
 from dataclasses import dataclass
 from typing import Optional
 
+from neo4j import GraphDatabase
 from qdrant_client import QdrantClient
 
 from core.config import get_settings
@@ -20,6 +22,8 @@ class PostgresConnection:
     database: str
     user: str
     password: str
+    hostaddr: str = ""
+    sslmode: str = "prefer"
 
 
 @dataclass
@@ -30,29 +34,86 @@ class QdrantConnection:
     url: str = ""
 
 
+def _normalize_secret_value(value: Optional[str]) -> str:
+    if value is None:
+        return ""
+    return str(value).strip().strip("'\"")
+
+
 def get_neo4j_connection() -> Neo4jConnection:
     settings = get_settings()
     return Neo4jConnection(
-        uri=settings.neo4j_uri,
-        user=settings.neo4j_user,
-        password=settings.neo4j_password,
+        uri=_normalize_secret_value(settings.neo4j_uri),
+        user=_normalize_secret_value(settings.neo4j_user),
+        password=_normalize_secret_value(settings.neo4j_password),
+    )
+
+
+def create_neo4j_driver(connection_timeout: int = 10):
+    neo4j_config = get_neo4j_connection()
+    return GraphDatabase.driver(
+        neo4j_config.uri,
+        auth=(neo4j_config.user, neo4j_config.password),
+        connection_timeout=connection_timeout,
+        max_connection_lifetime=3600,
     )
 
 
 def get_postgres_connection() -> PostgresConnection:
     settings = get_settings()
     return PostgresConnection(
-        host=settings.postgres_host,
+        host=_normalize_secret_value(settings.postgres_host),
         port=settings.postgres_port,
-        database=settings.postgres_db,
-        user=settings.postgres_user,
-        password=settings.postgres_password,
+        database=_normalize_secret_value(settings.postgres_db),
+        user=_normalize_secret_value(settings.postgres_user),
+        password=_normalize_secret_value(settings.postgres_password),
+        hostaddr=_normalize_secret_value(settings.postgres_hostaddr),
+        sslmode=_normalize_secret_value(settings.postgres_sslmode) or "prefer",
     )
+
+
+def _resolve_ipv4_hostaddr(host: str, port: int) -> str:
+    try:
+        if host in {"localhost", "127.0.0.1"}:
+            return ""
+        entries = socket.getaddrinfo(host, port, family=socket.AF_INET, type=socket.SOCK_STREAM)
+        for entry in entries:
+            address = entry[4][0]
+            if address:
+                return address
+    except Exception:
+        return ""
+    return ""
+
+
+def build_postgres_connect_kwargs(timeout: Optional[int] = None) -> dict:
+    pg = get_postgres_connection()
+    kwargs = {
+        "host": pg.host,
+        "port": pg.port,
+        "dbname": pg.database,
+        "user": pg.user,
+        "password": pg.password,
+        "sslmode": pg.sslmode or "prefer",
+    }
+
+    if timeout is not None:
+        kwargs["connect_timeout"] = timeout
+
+    hostaddr = (pg.hostaddr or "").strip() or _resolve_ipv4_hostaddr(pg.host, pg.port)
+    if hostaddr:
+        kwargs["hostaddr"] = hostaddr
+
+    return kwargs
 
 
 def get_qdrant_connection() -> QdrantConnection:
     settings = get_settings()
     return QdrantConnection(
+        host=_normalize_secret_value(settings.qdrant_host),
+        port=settings.qdrant_port,
+        api_key=_normalize_secret_value(settings.qdrant_api_key),
+        url=_normalize_secret_value(settings.qdrant_url),
         host=settings.qdrant_host,
         port=settings.qdrant_port,
         api_key=settings.qdrant_api_key,

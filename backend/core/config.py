@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     postgres_db: str = "outcomes_db"
     postgres_user: str = "postgres"
     postgres_password: str = "password123"
+    postgres_hostaddr: str = ""
+    postgres_sslmode: str = "prefer"
 
     qdrant_host: str = "localhost"
     qdrant_port: int = 6333

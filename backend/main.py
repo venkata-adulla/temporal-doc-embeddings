@@ -87,29 +87,22 @@ def detailed_health_check() -> dict:
     
     # Check Neo4j
     try:
-        from core.database import get_neo4j_connection
-        neo4j_config = get_neo4j_connection()
+        from core.database import create_neo4j_driver
         driver = None
         try:
-            # Use connection_timeout and max_connection_lifetime for better reliability
-            driver = GraphDatabase.driver(
-                neo4j_config.uri,
-                auth=(neo4j_config.user, neo4j_config.password),
-                connection_timeout=10,  # 10 second timeout
-                max_connection_lifetime=3600
-            )
-            # Verify connectivity with a simple query instead of verify_connectivity()
-            # This is more reliable and actually tests the connection
+            driver = create_neo4j_driver(connection_timeout=10)
+            # verify_connectivity helps catch handshake/auth issues quickly.
+            driver.verify_connectivity()
             with driver.session() as session:
                 result = session.run("RETURN 1 as test")
-                result.single()  # Consume the result
+                result.single()
             health["neo4j"] = "ok"
             logger.debug("Neo4j health check: OK")
         finally:
             if driver:
                 try:
                     driver.close()
-                except:
+                except Exception:
                     pass
     except Exception as e:
         error_msg = str(e)
@@ -125,16 +118,8 @@ def detailed_health_check() -> dict:
     
     # Check PostgreSQL
     try:
-        from core.database import get_postgres_connection
-        pg_config = get_postgres_connection()
-        conn = psycopg2.connect(
-            host=pg_config.host,
-            port=pg_config.port,
-            database=pg_config.database,
-            user=pg_config.user,
-            password=pg_config.password,
-            connect_timeout=5  # 5 second timeout
-        )
+        from core.database import build_postgres_connect_kwargs
+        conn = psycopg2.connect(**build_postgres_connect_kwargs(timeout=5))
         conn.close()
         health["postgres"] = "ok"
         logger.debug("PostgreSQL health check: OK")
