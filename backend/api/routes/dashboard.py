@@ -4,9 +4,8 @@ from typing import Dict, Any, List
 from dateutil.parser import parse as parse_date
 
 from api.middleware.auth import require_api_key
-from core.database import get_neo4j_connection, get_qdrant_connection
+from core.database import create_qdrant_client, get_neo4j_connection
 from neo4j import GraphDatabase
-from qdrant_client import QdrantClient
 
 router = APIRouter(dependencies=[require_api_key()])
 
@@ -187,9 +186,7 @@ def get_dashboard_stats() -> Dict[str, Any]:
     
     try:
         # Get Qdrant connection for document counts
-        from qdrant_client import QdrantClient
-        qdrant_config = get_qdrant_connection()
-        qdrant_client = QdrantClient(host=qdrant_config.host, port=qdrant_config.port)
+        qdrant_client = create_qdrant_client()
         
         # Count total documents
         collections = qdrant_client.get_collections()
