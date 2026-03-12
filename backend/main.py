@@ -73,6 +73,7 @@ def health_check() -> dict:
 def detailed_health_check() -> dict:
     """Detailed health check for all services."""
     import logging
+    from neo4j import GraphDatabase
     import psycopg2
     
     logger = logging.getLogger(__name__)
