@@ -17,6 +17,8 @@ class Settings(BaseSettings):
 
     qdrant_host: str = "localhost"
     qdrant_port: int = 6333
+    qdrant_api_key: str = ""
+    qdrant_url: str = ""
 
     embedding_model: str = "BAAI/bge-large-en-v1.5"
     spacy_model: str = "en_core_web_sm"

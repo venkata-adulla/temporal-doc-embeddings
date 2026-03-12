@@ -3,7 +3,8 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import chatbot, dashboard, documents, lifecycles, outcomes, predictions
+from importlib import import_module
+
 from core.config import get_settings
 
 logging.basicConfig(
@@ -29,12 +30,24 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
-app.include_router(chatbot.router, prefix="/api/chatbot", tags=["chatbot"])
-app.include_router(dashboard.router, prefix="/api/dashboard", tags=["dashboard"])
-app.include_router(documents.router, prefix="/api/documents", tags=["documents"])
-app.include_router(lifecycles.router, prefix="/api/lifecycles", tags=["lifecycles"])
-app.include_router(outcomes.router, prefix="/api/outcomes", tags=["outcomes"])
-app.include_router(predictions.router, prefix="/api/predictions", tags=["predictions"])
+ROUTES = [
+    ("chatbot", "/chatbot", ["chatbot"]),
+    ("dashboard", "/dashboard", ["dashboard"]),
+    ("documents", "/documents", ["documents"]),
+    ("lifecycles", "/lifecycles", ["lifecycles"]),
+    ("outcomes", "/outcomes", ["outcomes"]),
+    ("predictions", "/predictions", ["predictions"]),
+]
+
+for module_name, base_prefix, tags in ROUTES:
+    try:
+        module = import_module(f"api.routes.{module_name}")
+        app.include_router(module.router, prefix=base_prefix, tags=tags)
+        app.include_router(module.router, prefix=f"/api{base_prefix}", tags=tags)
+    except Exception as exc:
+        logging.getLogger(__name__).warning(
+            "Skipping route module '%s' due to import error: %s", module_name, exc
+        )
 
 
 @app.get("/")
@@ -49,17 +62,18 @@ def root():
 
 
 @app.get("/health")
+@app.get("/api/health")
 def health_check() -> dict:
     """Basic health check."""
     return {"status": "ok"}
 
 
 @app.get("/health/detailed")
+@app.get("/api/health/detailed")
 def detailed_health_check() -> dict:
     """Detailed health check for all services."""
     import logging
     from neo4j import GraphDatabase
-    from qdrant_client import QdrantClient
     import psycopg2
     
     logger = logging.getLogger(__name__)
@@ -131,13 +145,8 @@ def detailed_health_check() -> dict:
     
     # Check Qdrant
     try:
-        from core.database import get_qdrant_connection
-        qdrant_config = get_qdrant_connection()
-        client = QdrantClient(
-            host=qdrant_config.host,
-            port=qdrant_config.port,
-            timeout=5  # 5 second timeout
-        )
+        from core.database import create_qdrant_client
+        client = create_qdrant_client(timeout=5)
         client.get_collections()
         health["qdrant"] = "ok"
         logger.debug("Qdrant health check: OK")
