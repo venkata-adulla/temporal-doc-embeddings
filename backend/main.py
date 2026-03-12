@@ -74,7 +74,6 @@ def detailed_health_check() -> dict:
     """Detailed health check for all services."""
     import logging
     from neo4j import GraphDatabase
-    from qdrant_client import QdrantClient
     import psycopg2
     
     logger = logging.getLogger(__name__)
@@ -146,13 +145,8 @@ def detailed_health_check() -> dict:
     
     # Check Qdrant
     try:
-        from core.database import get_qdrant_connection
-        qdrant_config = get_qdrant_connection()
-        client = QdrantClient(
-            host=qdrant_config.host,
-            port=qdrant_config.port,
-            timeout=5  # 5 second timeout
-        )
+        from core.database import create_qdrant_client
+        client = create_qdrant_client(timeout=5)
         client.get_collections()
         health["qdrant"] = "ok"
         logger.debug("Qdrant health check: OK")

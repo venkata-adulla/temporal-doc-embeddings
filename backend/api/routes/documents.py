@@ -185,14 +185,12 @@ async def list_documents(lifecycle_id: str = None, search: str = None):
     If search is provided, uses semantic search (vector similarity) combined with metadata filtering.
     Otherwise, uses metadata filtering only.
     """
-    from qdrant_client import QdrantClient
     from qdrant_client.models import Filter, FieldCondition, MatchValue
-    from core.database import get_qdrant_connection
+    from core.database import create_qdrant_client
     from services.embedding_service import EmbeddingService
     
     try:
-        qdrant_config = get_qdrant_connection()
-        qdrant_client = QdrantClient(host=qdrant_config.host, port=qdrant_config.port)
+        qdrant_client = create_qdrant_client()
         
         # If search query provided, use semantic search (vector similarity)
         if search:
@@ -365,8 +363,7 @@ async def list_documents(lifecycle_id: str = None, search: str = None):
 async def get_document_stats():
     """Get document processing statistics."""
     from datetime import datetime, timedelta
-    from qdrant_client import QdrantClient
-    from core.database import get_qdrant_connection, get_neo4j_connection
+    from core.database import create_qdrant_client, get_neo4j_connection
     from neo4j import GraphDatabase
     
     stats = {
@@ -381,8 +378,7 @@ async def get_document_stats():
     
     try:
         # Get document counts from Qdrant
-        qdrant_config = get_qdrant_connection()
-        qdrant_client = QdrantClient(host=qdrant_config.host, port=qdrant_config.port)
+        qdrant_client = create_qdrant_client()
 
         # Try collection-info count first (may fail with older qdrant-client + newer server schema)
         total_docs = 0

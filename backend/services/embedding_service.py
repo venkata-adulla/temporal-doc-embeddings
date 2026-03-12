@@ -1,12 +1,11 @@
 import logging
 from typing import List, Optional
 
-from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 from sentence_transformers import SentenceTransformer
 
 from core.config import get_settings
-from core.database import get_qdrant_connection
+from core.database import create_qdrant_client
 
 logger = logging.getLogger(__name__)
 
@@ -27,8 +26,7 @@ class EmbeddingService:
 
         # Initialize Qdrant client
         try:
-            qdrant_config = get_qdrant_connection()
-            self.qdrant = QdrantClient(host=qdrant_config.host, port=qdrant_config.port)
+            self.qdrant = create_qdrant_client()
             self.collection_name = "documents"
             self._ensure_collection()
         except Exception as e:
