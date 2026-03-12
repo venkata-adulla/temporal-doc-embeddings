@@ -19,8 +19,15 @@ logger = logging.getLogger(__name__)
 router = APIRouter(dependencies=[require_api_key()])
 
 parser = DocumentParser()
-embedder = EmbeddingService()
+_embedder = None
 lifecycle_service = LifecycleService()
+
+
+def get_embedder() -> EmbeddingService:
+    global _embedder
+    if _embedder is None:
+        _embedder = EmbeddingService()
+    return _embedder
 
 def _extract_document_status(text: str) -> str | None:
     """Extract a normalized status from document text when present."""
@@ -86,13 +93,13 @@ async def upload_document(
             logger.info(f"No lifecycle ID detected, using generated ID: {final_lifecycle_id}")
         
         # Generate embedding
-        embedding = embedder.embed(parsed["text"])
+        embedding = get_embedder().embed(parsed["text"])
         
         # Store embedding in Qdrant
         upload_timestamp = datetime.now(timezone.utc).isoformat()
         processing_time_s = max(0.0, (datetime.now(timezone.utc) - start_time).total_seconds())
         
-        embedder.store_embedding(
+        get_embedder().store_embedding(
             document_id=document_id,
             embedding=embedding,
             metadata={
@@ -195,8 +202,7 @@ async def list_documents(lifecycle_id: str = None, search: str = None):
         # If search query provided, use semantic search (vector similarity)
         if search:
             try:
-                embedder = EmbeddingService()
-                query_embedding = embedder.embed(search)
+                query_embedding = get_embedder().embed(search)
                 
                 # Build filter if lifecycle_id is provided
                 query_filter = None

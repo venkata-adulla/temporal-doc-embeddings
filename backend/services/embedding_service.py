@@ -14,17 +14,11 @@ class EmbeddingService:
     def __init__(self):
         settings = get_settings()
         self.model_name = settings.embedding_model
-        
-        # Initialize sentence transformer model
-        try:
-            self.model = SentenceTransformer(self.model_name)
-            self.dimensions = self.model.get_sentence_embedding_dimension()
-            logger.info(f"Loaded embedding model: {self.model_name} (dim={self.dimensions})")
-        except Exception as e:
-            logger.error(f"Failed to load embedding model {self.model_name}: {e}")
-            raise
+        self.model = None
+        # Default for BAAI/bge-large-en-v1.5; updated once model is loaded.
+        self.dimensions = 1024
 
-        # Initialize Qdrant client
+        # Initialize Qdrant client only (lightweight).
         try:
             self.qdrant = create_qdrant_client()
             self.collection_name = "documents"
@@ -33,15 +27,28 @@ class EmbeddingService:
             logger.error(f"Failed to connect to Qdrant: {e}")
             self.qdrant = None
 
+    def _ensure_model(self) -> None:
+        if self.model is not None:
+            return
+
+        try:
+            self.model = SentenceTransformer(self.model_name)
+            self.dimensions = self.model.get_sentence_embedding_dimension()
+            logger.info(f"Loaded embedding model: {self.model_name} (dim={self.dimensions})")
+            self._ensure_collection()
+        except Exception as e:
+            logger.error(f"Failed to load embedding model {self.model_name}: {e}")
+            raise
+
     def _ensure_collection(self):
         """Ensure the Qdrant collection exists."""
         if not self.qdrant:
             return
-        
+
         try:
             collections = self.qdrant.get_collections().collections
             collection_names = [c.name for c in collections]
-            
+
             if self.collection_name not in collection_names:
                 self.qdrant.create_collection(
                     collection_name=self.collection_name,
@@ -58,8 +65,9 @@ class EmbeddingService:
         """Generate embedding for text using sentence-transformers."""
         if not text or not text.strip():
             return [0.0] * self.dimensions
-        
+
         try:
+            self._ensure_model()
             # Truncate very long texts
             text = text[:10000] if len(text) > 10000 else text
             embedding = self.model.encode(text, normalize_embeddings=True)
@@ -73,7 +81,7 @@ class EmbeddingService:
         if not self.qdrant:
             logger.warning("Qdrant not available, skipping embedding storage")
             return False
-        
+
         try:
             point = PointStruct(
                 id=hash(document_id) % (2**63),  # Qdrant requires int64 IDs
@@ -96,7 +104,7 @@ class EmbeddingService:
         """Search for similar documents using embeddings."""
         if not self.qdrant:
             return []
-        
+
         try:
             query_embedding = self.embed(query_text)
             results = self.qdrant.search(
