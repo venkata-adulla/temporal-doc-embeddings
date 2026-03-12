@@ -40,10 +40,60 @@ def _normalize_secret_value(value: Optional[str]) -> str:
     return str(value).strip().strip("'\"")
 
 
+def _is_local_host(host: str) -> bool:
+    return host in {"localhost", "127.0.0.1", "::1"}
+
+
+def _coerce_neo4j_uri(uri: str) -> str:
+    """Normalize Neo4j URI variants frequently used in deployment env vars."""
+    candidate = _normalize_secret_value(uri).rstrip("/")
+    if not candidate:
+        return ""
+
+    lower = candidate.lower()
+    if lower.startswith("https://"):
+        return "neo4j+s://" + candidate[len("https://") :]
+    if lower.startswith("http://"):
+        return "bolt://" + candidate[len("http://") :]
+    if "://" not in candidate:
+        host_only = candidate.split("/", 1)[0].split(":", 1)[0]
+        scheme = "bolt" if _is_local_host(host_only) else "neo4j+s"
+        return f"{scheme}://{candidate}"
+    return candidate
+
+
+def _resolve_neo4j_uri(settings) -> str:
+    default_uri = "bolt://localhost:7689"
+
+    configured_uri = _coerce_neo4j_uri(settings.neo4j_uri)
+    configured_url = _coerce_neo4j_uri(getattr(settings, "neo4j_url", ""))
+
+    # Backwards compatibility:
+    # - prefer NEO4J_URI if explicitly set
+    # - fallback to NEO4J_URL when NEO4J_URI remains default/missing
+    if configured_uri and configured_uri != default_uri:
+        return configured_uri
+    if configured_url:
+        return configured_url
+
+    host = _normalize_secret_value(getattr(settings, "neo4j_host", ""))
+    port = int(getattr(settings, "neo4j_port", 0) or 0)
+    scheme = _normalize_secret_value(getattr(settings, "neo4j_scheme", ""))
+    if host:
+        host_candidate = _coerce_neo4j_uri(host)
+        if "://" in host_candidate:
+            return host_candidate
+        resolved_scheme = scheme or ("bolt" if _is_local_host(host) else "neo4j+s")
+        resolved_port = port or (7689 if _is_local_host(host) else 7687)
+        return f"{resolved_scheme}://{host}:{resolved_port}"
+
+    return configured_uri or default_uri
+
+
 def get_neo4j_connection() -> Neo4jConnection:
     settings = get_settings()
     return Neo4jConnection(
-        uri=_normalize_secret_value(settings.neo4j_uri),
+        uri=_resolve_neo4j_uri(settings),
         user=_normalize_secret_value(settings.neo4j_user),
         password=_normalize_secret_value(settings.neo4j_password),
     )
