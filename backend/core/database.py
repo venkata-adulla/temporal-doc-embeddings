@@ -1,6 +1,7 @@
 import socket
 from dataclasses import dataclass
 from typing import Optional
+from urllib.parse import urlparse
 
 from neo4j import GraphDatabase
 from qdrant_client import QdrantClient
@@ -58,7 +59,13 @@ def _coerce_neo4j_uri(uri: str) -> str:
     if "://" not in candidate:
         host_only = candidate.split("/", 1)[0].split(":", 1)[0]
         scheme = "bolt" if _is_local_host(host_only) else "neo4j+s"
-        return f"{scheme}://{candidate}"
+        candidate = f"{scheme}://{candidate}"
+
+    # Aura users sometimes paste HTTP Query API URLs (with /db/.../query/v2).
+    # Neo4j drivers require only scheme://host[:port].
+    parsed = urlparse(candidate)
+    if parsed.scheme and parsed.netloc:
+        return f"{parsed.scheme}://{parsed.netloc}"
     return candidate
 
 
