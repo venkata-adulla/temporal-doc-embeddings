@@ -1,17 +1,39 @@
 from functools import lru_cache
 from typing import List
 
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    neo4j_uri: str = "bolt://localhost:7689"
-    neo4j_url: str = ""
-    neo4j_host: str = ""
-    neo4j_port: int = 0
-    neo4j_scheme: str = ""
-    neo4j_user: str = "neo4j"
-    neo4j_password: str = "password123"
+    neo4j_uri: str = Field(
+        default="bolt://localhost:7689",
+        validation_alias=AliasChoices("NEO4J_URI", "NE04J_URI"),
+    )
+    neo4j_url: str = Field(
+        default="",
+        validation_alias=AliasChoices("NEO4J_URL", "NE04J_URL"),
+    )
+    neo4j_host: str = Field(
+        default="",
+        validation_alias=AliasChoices("NEO4J_HOST", "NE04J_HOST"),
+    )
+    neo4j_port: int = Field(
+        default=0,
+        validation_alias=AliasChoices("NEO4J_PORT", "NE04J_PORT"),
+    )
+    neo4j_scheme: str = Field(
+        default="",
+        validation_alias=AliasChoices("NEO4J_SCHEME", "NE04J_SCHEME"),
+    )
+    neo4j_user: str = Field(
+        default="neo4j",
+        validation_alias=AliasChoices("NEO4J_USER", "NE04J_USER"),
+    )
+    neo4j_password: str = Field(
+        default="password123",
+        validation_alias=AliasChoices("NEO4J_PASSWORD", "NE04J_PASSWORD"),
+    )
 
     postgres_host: str = "localhost"
     postgres_port: int = 5432
